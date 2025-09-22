@@ -15,7 +15,7 @@
   "@type": "Person",
   "name": "Okami Nalado",
   "url": "https://okaminalado.com",
-  "image": "me1.jpeg",
+  "image": "okami.jpeg",
   "sameAs": [
  "https://www.tiktok.com/@theheadokaminalado?_t=ZS-8zChpPimGIM&_r=1",
  "https://youtube.com/@theheadokaminalado?si=VdDSPVlTHkC78bnw",
@@ -28,75 +28,94 @@
   "worksFor": {
     "@type": "Organization",
     "name": "ElevateVA Space"
+        "@type": "Organization",
+    "name": "The Field"
   }
 }
     </script>
-    <link rel="stylesheet" href="me2.jpeg">
-    <link href="me1.jpeg" rel="stylesheet">
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OkamiNalado | Luxury Membership Hub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: '#D4AF37',
+                        dark: '#0a0a0a',
+                        deepPurple: '#6A0DAD',
+                        midnight: '#050505'
+                    },
+                    fontFamily: {
+                        heading: ['Playfair Display', 'serif'],
+                        body: ['Montserrat', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'luxury': '0 10px 30px -10px rgba(212, 175, 55, 0.3)',
+                        'glow': '0 0 20px rgba(212, 175, 55, 0.2)'
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --dark-bg: #0a0a0a;
-            --darker-bg: #000000;
-            --light-text: #ffffff;
-            --gold: #d4af37;
-            --gold-light: #f0c808;
-            --gray: #2a2a2a;
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
+            background-color: #000;
+            color: #fff;
             font-family: 'Montserrat', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--light-text);
-            line-height: 1.6;
             overflow-x: hidden;
         }
-
-        h1, h2, h3, h4 {
-            font-family: 'Playfair Display', serif;
-            font-weight: 600;
+        
+        .luxury-bg {
+            background: radial-gradient(circle at top right, rgba(106, 13, 173, 0.15) 0%, transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
+                        #000;
         }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
+        
+        .gold-gradient {
+            background: linear-gradient(90deg, #D4AF37, #F3E5AB, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
-
-        .btn {
-            display: inline-block;
-            padding: 15px 35px;
-            background: transparent;
-            border: 2px solid var(--gold);
-            color: var(--gold);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: var(--transition);
+        
+        .door-card {
+            transition: all 0.5s ease;
+            transform-style: preserve-3d;
+            perspective: 1000px;
+        }
+        
+        .door-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.4);
+        }
+        
+        .door-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .door-card:hover .door-icon {
+            transform: scale(1.1);
+        }
+        
+        .luxury-button {
+            background: linear-gradient(45deg, #D4AF37, #F3E5AB, #D4AF37);
+            background-size: 200% auto;
+            transition: all 0.5s ease;
             position: relative;
             overflow: hidden;
-            font-size: 1rem;
-            text-decoration: none;
-            margin: 10px;
-            text-align: center;
         }
-
-        .btn:hover {
-            background: var(--gold);
-            color: var(--dark-bg);
-            box-shadow: 0 0 20px var(--gold-light);
+        
+        .luxury-button:hover {
+            background-position: 100% center;
             transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.5);
         }
-
-        .btn::after {
+        
+        .luxury-button::after {
             content: '';
             position: absolute;
             top: 0;
@@ -106,852 +125,518 @@
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
             transition: 0.5s;
         }
-
-        .btn:hover::after {
+        
+        .luxury-button:hover::after {
             left: 100%;
         }
-
-        .btn-primary {
-            background: var(--gold);
-            color: var(--dark-bg);
-        }
-
-        .btn-primary:hover {
-            background: transparent;
-            color: var(--gold);
-        }
-
-        section {
-            padding: 100px 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            position: relative;
-            display: inline-block;
-            margin-bottom: 15px;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--gold);
-        }
-
-        /* Header & Navigation */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1000;
-            padding: 20px 0;
-            background: rgba(10, 10, 10, 0.9);
+        
+        .membership-card {
+            background: rgba(10, 10, 10, 0.7);
             backdrop-filter: blur(10px);
-            transition: var(--transition);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.4s ease;
         }
-
-        header.scrolled {
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        
+        .membership-card:hover {
+            border-color: #D4AF37;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px -10px rgba(212, 175, 55, 0.3);
         }
-
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        
+        .membership-card.premium {
+            border: 2px solid #D4AF37;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
         }
-
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--light-text);
-            text-decoration: none;
+        
+        .membership-card.premium:hover {
+            box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.4);
         }
-
-        .logo span {
-            color: var(--gold);
+        
+        .testimonial-card {
+            background: rgba(10, 10, 10, 0.8);
+            border-left: 3px solid #D4AF37;
         }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
+        
+        .glow-text {
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
-
-        .nav-links li {
-            margin-left: 30px;
+        
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
         }
-
-        .nav-links a {
-            color: var(--light-text);
-            text-decoration: none;
-            font-weight: 500;
-            transition: var(--transition);
+        
+        .lion-icon {
+            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.7));
+        }
+        
+        .nav-link {
             position: relative;
+            padding-bottom: 5px;
         }
-
-        .nav-links a:hover {
-            color: var(--gold);
-        }
-
-        .nav-links a::after {
+        
+        .nav-link::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: 0;
             left: 0;
             width: 0;
             height: 2px;
-            background: var(--gold);
-            transition: var(--transition);
+            background: #D4AF37;
+            transition: width 0.3s ease;
         }
-
-        .nav-links a:hover::after {
+        
+        .nav-link:hover::after {
             width: 100%;
         }
-
-        .hamburger {
-            display: none;
-            cursor: pointer;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.9)), url("me1.jpeg") no-repeat center center/cover;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            z-index: 2;
-            animation: fadeInUp 1s ease;
-        }
-
-        .hero h1 {
-            font-size: 4rem;
-            margin-bottom: 20px;
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            color: var(--gold);
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 40px;
-            max-width: 600px;
-            opacity: 0.9;
-        }
-
-        .hero-btns {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        /* About Section */
-        .about {
-            background: var(--darker-bg);
-        }
-
-        .about-content {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-            align-items: center;
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .about-text h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .about-text p {
-            margin-bottom: 20px;
-        }
-
-        .quote {
-            border-left: 3px solid var(--gold);
-            padding: 20px;
-            margin: 30px 0;
-            font-style: italic;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.2rem;
-        }
-
-        .quote-author {
-            text-align: right;
-            font-weight: 600;
-            color: var(--gold);
-        }
-
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-
-        .about-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        /* Mentorship Section */
-        .pricing-cards {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .pricing-card {
-            background: var(--darker-bg);
-            border-radius: 15px;
-            overflow: hidden;
-            width: 100%;
-            max-width: 500px;
-            transition: var(--transition);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-            position: relative;
-            border: 1px solid rgba(212, 175, 55, 0.1);
-        }
-
-        .pricing-card:hover {
-            transform: translateY(-15px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            border-color: rgba(212, 175, 55, 0.3);
-        }
-
-        .card-header {
-            background: linear-gradient(135deg, var(--gold), #b8860b);
-            padding: 30px;
-            text-align: center;
-        }
-
-        .card-header h3 {
-            font-size: 2rem;
-            margin-bottom: 10px;
-        }
-
-        .price {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin: 15px 0;
-        }
-
-        .card-body {
-            padding: 30px;
-        }
-
-        .features {
-            list-style: none;
-            margin: 25px 0;
-        }
-
-        .features li {
-            padding: 12px 0;
-            border-bottom: 1px solid var(--gray);
-            display: flex;
-            align-items: center;
-        }
-
-        .features li:last-child {
-            border-bottom: none;
-        }
-
-        .features li i {
-            color: var(--gold);
-            margin-right: 15px;
-            font-size: 1.2rem;
-        }
-
-        .card-footer {
-            padding: 0 30px 30px;
-            text-align: center;
-        }
-
-        .rules {
-            background: var(--gray);
-            padding: 25px;
-            border-radius: 10px;
-            margin: 30px 0;
-        }
-
-        .rules h4 {
-            color: var(--gold);
-            margin-bottom: 15px;
-            text-align: center;
-        }
-
-        .rules ul {
-            padding-left: 20px;
-        }
-
-        .rules li {
-            margin-bottom: 10px;
-        }
-
-        /* Contact Section */
-        .contact {
-            background: var(--darker-bg);
-        }
-
-        .contact-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 50px;
-        }
-
-        .contact-info {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .contact-info h3 {
-            font-size: 2rem;
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 30px;
-            opacity: 0.8;
-        }
-
-        .social-icons {
-            display: flex;
-            gap: 20px;
-            margin-top: 30px;
-        }
-.social-icon {
-    width: 32px;  /* Adjust as needed */
-    height: 32px;
-    object-fit: contain; /* Maintains aspect ratio */
-}
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background: var(--gray);
-            color: var(--light-text);
-            font-size: 1.5rem;
-            transition: var(--transition);
-        }
-
-        .social-icons a:hover {
-            background: var(--gold);
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
-        }
-
-        .contact-form {
-            flex: 1;
-            min-width: 300px;
-        }
-
-        .form-group {
-            margin-bottom: 25px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 15px;
-            background: var(--gray);
-            border: 1px solid #333;
-            border-radius: 5px;
-            color: var(--light-text);
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--gold);
-            box-shadow: 0 0 0 2px rgba(212, 175, 55, 0.2);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background: #000;
-            padding: 40px 0 20px;
-            text-align: center;
-        }
-
-        .footer-nav {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            list-style: none;
-            margin-bottom: 30px;
-        }
-
-        .footer-nav li {
-            margin: 0 15px;
-        }
-
-        .footer-nav a {
-            color: var(--light-text);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        .footer-nav a:hover {
-            color: var(--gold);
-        }
-
-        .copyright {
-            opacity: 0.7;
-            font-size: 0.9rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
+        
         .fade-in {
             opacity: 0;
-            transform: translateY(30px);
+            transform: translateY(20px);
             transition: opacity 0.6s ease, transform 0.6s ease;
         }
-
+        
         .fade-in.appear {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* Responsive Design */
-        @media (max-width: 992px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-            
-            .pricing-cards {
-                gap: 30px;
-            }
+        
+        .mobile-menu {
+            transform: translateX(100%);
+            transition: transform 0.4s ease;
         }
-
-        @media (max-width: 768px) {
-            .hamburger {
-                display: block;
-                font-size: 1.8rem;
-            }
-            
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                right: -100%;
-                flex-direction: column;
-                background: var(--darker-bg);
-                width: 100%;
-                text-align: center;
-                transition: 0.5s;
-                padding: 20px 0;
-            }
-            
-            .nav-links.active {
-                right: 0;
-            }
-            
-            .nav-links li {
-                margin: 15px 0;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.2rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
+        
+        .mobile-menu.open {
+            transform: translateX(0);
         }
-
-        @media (max-width: 576px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero-btns {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                margin: 10px 0;
-            }
-            
-            section {
-                padding: 70px 0;
-            }
+        
+        .blog-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.2);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-5px);
+            border-color: #D4AF37;
+            box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .elder-card {
+            background: rgba(10, 10, 10, 0.7);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .community-link {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        .community-link:hover {
+            border-color: #D4AF37;
+            background: rgba(212, 175, 55, 0.1);
         }
     </style>
 </head>
-<body>
+<body class="luxury-bg">
     <!-- Header -->
-    <header id="header">
-        <div class="container navbar">
-            <a href="#" class="logo">Okami <span>Nalado</span></a>
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#mentorship">Mentorship</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="hamburger">
-                <i class="fas fa-bars"></i>
+    <header class="container mx-auto px-4 py-6 flex justify-between items-center">
+        <div class="flex items-center">
+            <div class="lion-icon w-12 h-12 flex items-center justify-center">
+                <img src="main.jpeg" alt="OkamiNalado" class="h-8 w-auto">
             </div>
+            <h1 class="ml-3 text-2xl font-heading font-bold">OKAMI NALADO (THE HEAD)</h1>
         </div>
-    </header>
-
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="container hero-content">
-            <h1>Okami <span>Nalado</span></h1>
-            <p>Born to Lead. Built to Elevate.</p>
-            <p>Digital Empire Architect (DEA)</p>
-            <div class="hero-btns">
-                <a href="#mentorship" class="btn btn-primary">Choose Your Path</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section class="who-is-okami-nalado" id="who-is-okami-nalado">
-        <div class="container">
-            <div class="section-title">
-                <h2>Who is Okami Nalado?</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text fade-in">
-                    <p>Okami Nalado, popularly known as <strong style="color:gold;"> The Head </strong> is a Digital Empire Architect and AI Strategist helping virtual assistants, freelancers, and digital entrepreneurs build income, structure, and authority online.</p>
-                    
-                    <p>With a strong focus on clarity, automation, and skill-based systems, he empowers digital hustlers to turn chaos into structure, and side hustles into six-figure brands.</p>
-                    
-                    <p>He is the founder of ElevateVA Space, a platform built to train and transform beginners into powerful online earners using high-income skills and AI.</p>
-                    
-                    <p>Known for his cold mindset, clean execution, and no-fluff strategy, Okami represents the new wave of digital leadership, built from pain, focused on power, and driven by purpose.</p>
-                    
-                    <div class="quote">
-                        "They didn't see me. That's why I'm dangerous now."
-                        <div class="quote-author">— Okami Nalado</div>
-                    </div>
-                    
-                    <h3>Earlier Life</h3>
-                    <p>Okami Nalado's journey began far from the spotlight, in the quiet struggle of doing whatever it took to rise.</p>
-                    
-                    <p>From working point-of-sale jobs (POS) to self-teaching digital systems late into the night, his early years were built on discomfort, discipline, and relentless self-education.</p>
-                    
-                    <p>With no team, no resources, and no roadmap, he learned how to leverage skills like content creation, AI, branding, and digital strategy, all from the ground up.</p>
-                    
-                    <p>Instead of chasing comfort, he chose cold clarity. Instead of waiting for help, he became the help.</p>
-                    
-                    <p>His early life laid the foundation for what he teaches today: that true digital power isn't given, it's built, alone, brick by brick, in silence.</p>
-                </div>
-                <div class="about-image fade-in">
-                    <img src="me2.jpeg" alt="Okami Nalado">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Course Purchase Section -->
-<section style="background-color: #000; padding: 60px 20px; text-align: center;">
-    <div style="max-width: 800px; margin: 0 auto;">
-        <h2 style="
-            color: #fff; 
-            font-size: 36px; 
-            font-weight: 700; 
-            margin-bottom: 40px;
-            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        ">
-            Zero to Premium (TheVAStarterFile)
-        </h2>
         
-        <div style="display: flex; justify-content: center;">
-            <a href="https://paystack.com/buy/zero-to-premium-thevastarterfile-hwloph" style="
-                display: inline-block;
-                padding: 20px 50px;
-                font-size: 24px;
-                font-weight: bold;
-                text-align: center;
-                text-decoration: none;
-                border: 2px solid #D4AF37;
-                border-radius: 8px;
-                cursor: pointer;
-                transition: all 0.3s ease;
-                position: relative;
-                overflow: hidden;
-                background: linear-gradient(135deg, #D4AF37 0%, #F9E076 100%);
-                color: #000;
-                box-shadow: 
-                    0 4px 15px rgba(212, 175, 55, 0.4),
-                    0 6px 20px rgba(0, 0, 0, 0.3);
-                letter-spacing: 1px;
-                text-transform: uppercase;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            " 
-            onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 8px 25px rgba(212, 175, 55, 0.6), 0 12px 30px rgba(0, 0, 0, 0.4)';"
-            onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(212, 175, 55, 0.4), 0 6px 20px rgba(0, 0, 0, 0.3)';">
-                Buy Now
-            </a>
+        <nav class="hidden md:block">
+            <ul class="flex space-x-8">
+                <li><a href="#home" class="nav-link text-sm uppercase tracking-wider">Home</a></li>
+                <li><a href="#doors" class="nav-link text-sm uppercase tracking-wider">Choose Your Path</a></li>
+                <li><a href="#about" class="nav-link text-sm uppercase tracking-wider">Who is Okami Nalado?</a></li>
+                <li><a href="#community" class="nav-link text-sm uppercase tracking-wider">Community</a></li>
+            </ul>
+        </nav>
+        
+        <button id="menu-toggle" class="md:hidden text-gold">
+            <i class="fas fa-bars text-xl"></i>
+        </button>
+    </header>
+    
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-64 bg-dark z-50 p-6 pt-20">
+        <button id="close-menu" class="absolute top-6 right-6 text-gold">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+        <ul class="space-y-6">
+            <li><a href="#home" class="block text-lg nav-link">Home</a></li>
+            <li><a href="#doors" class="block text-lg nav-link">Choose Your Path</a></li>
+            <li><a href="#about" class="block text-lg nav-link">Who is Okami Nalado?</a></li>
+            <li><a href="#community" class="block text-lg nav-link">Community</a></li>
+        </ul>
+    </div>
+    
+    <!-- Hero Section -->
+    <section id="home" class="container mx-auto px-4 py-20 md:py-32 text-center">
+        <div class="max-w-4xl mx-auto fade-in">
+            <div class="lion-icon w-24 h-24 mx-auto mb-8 flex items-center justify-center">
+                <img src="main.jpeg" alt="OkamiNalado" class="h-8 w-auto">
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
+                Two Doors. <span class="gold-gradient">One Transformation.</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12">
+                Step into the digital empire designed for those who demand excellence. Choose your path to mastery.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#elevate" class="luxury-button text-black font-bold py-4 px-8 rounded-lg text-lg tracking-wider">
+                    Enter ElevateVA Space
+                </a>
+                <a href="#field" class="border border-gold text-gold py-4 px-8 rounded-lg text-lg font-medium tracking-wider hover:bg-gold hover:text-black transition duration-300">
+                    Enter The Field Core
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Doors Section -->
+    <section id="doors" class="container mx-auto px-4 py-16">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Choose Your Path</h2>
+            <div class="w-24 h-1 bg-gold mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+            <!-- ElevateVA Door -->
+            <div id="elevate" class="door-card membership-card p-8 rounded-xl">
+                <div class="flex justify-center mb-6">
+                    <div class="door-icon w-20 h-20 rounded-full bg-dark flex items-center justify-center border border-gold">
+                        <img src="elevate.webp" alt="OkamiNalado" class="h-8 w-auto">
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-heading font-bold text-center mb-4">ElevateVA Space</h3>
+                
+                <p class="text-gray-300 text-center mb-6">
+                    Master the fundamentals of virtual assistance, branding, and freelance excellence. Build your foundation for digital success.
+                </p>
+                
+                <div class="text-center mb-8">
+                    <span class="text-3xl font-bold">$52.19</span>
+                    <span class="text-gray-400">/Month</span>
+                </div>
+                
+                <a href="https://selar.com/189mo11592" target="_blank" class="luxury-button block text-center text-black font-bold py-3 rounded-lg">
+                    Begin Your Journey
+                </a>
+            </div>
+            
+            <!-- Field Core Door -->
+            <div id="field" class="door-card membership-card premium p-8 rounded-xl">
+                <div class="flex justify-center mb-6">
+                    <div class="door-icon w-20 h-20 rounded-full bg-dark flex items-center justify-center border-2 border-gold">
+                        <img src="field.jpeg" alt="OkamiNalado" class="h-8 w-auto">
+                    </div>
+                </div>
+                
+                <h3 class="text-2xl font-heading font-bold text-center mb-4">The Field Core</h3>
+                
+                <p class="text-gray-300 text-center mb-6">
+                    Elite mentorship, wealth transformation strategies, and exclusive access to the inner circle of digital mastery.
+                </p>
+                
+                <div class="text-center mb-8">
+                    <span class="text-3xl font-bold">$417.53</span>
+                    <span class="text-gray-400">/Month</span>
+                </div>
+        
+                
+                <a href="https://selar.com/55b1595ll7" target="_blank" class="luxury-button block text-center text-black font-bold py-3 rounded-lg">
+                    Enter The Field
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- About Section -->
+    <section id="about" class="container mx-auto px-4 py-20">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Who is Okami Nalado?</h2>
+            <div class="w-24 h-1 bg-gold mx-auto"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-10 items-center mb-16">
+                <div class="flex-1">
+    <div class="rounded-xl overflow-hidden border border-gold p-1">
+        <div class="bg-gray-800 flex items-center justify-center">
+            <!-- Replace the icon with your image -->
+            <img src="okami.jpeg" alt="Okami Nalado" class="w-full h-auto object-cover">
+            
+            <!-- OR if you want to keep a fixed height container: -->
+            <!-- <div class="w-full h-96 flex items-center justify-center">
+                <img src="assets/images/your-profile-image.jpg" alt="Okami Nalado" class="max-h-full max-w-full object-contain">
+            </div> -->
         </div>
     </div>
-</section>
-    <!-- Mentorship Section -->
-    <section class="mentorship" id="mentorship">
-        <div class="container">
-            <div class="section-title">
-                <h2>🚀 Elite Mentorship – For The Chosen 1%</h2>
-                <p>You've seen the free tips. You've tried to figure it out alone. But now? It's time to go Elite</p>
-            </div>
-            
-            <div class="pricing-cards">
-                <!-- Fast Lane Card -->
-                <div class="pricing-card fade-in">
-                    <div class="card-header">
-                        <h3>⚡ Fast Lane Mentorship</h3>
-                        <div class="price">€25 (One-Time)</div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="features">
-                            <li><i class="fas fa-check-circle"></i> 1 Week Private Chat Access</li>
-                            <li><i class="fas fa-check-circle"></i> 1 Live Zoom Call – "VA Brand Clarity Call"</li>
-                            <li><i class="fas fa-check-circle"></i> Real-time guidance and answers for 7 days</li>
-                            <li><i class="fas fa-check-circle"></i> Get unstuck and launch fast</li>
-                        </ul>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#contact" class="btn">Join Fast Lane - €25.99</a>
+</div>       </div>
                     </div>
                 </div>
+                <div class="flex-1">
+                    <h3 class="text-2xl font-heading font-bold mb-4">The Digital Empire Architect</h3>
+                    <p class="text-gray-300 mb-4">
+<b>Okami Nalado,</b> widely known as <b> The Head,</b> is a <b>Digital Empire Architect and AI Strategist</b> dedicated to helping virtual assistants, freelancers, and digital entrepreneurs build lasting income, structure, and authority online.                    </p>
+                    <p class="text-gray-300 mb-4">
+Founder of <b>ElevateVA Space</b> and <b>The Field,</b> Okami transforms ambitious beginners into powerful online earners by blending high-income skills, automation, and clarity-driven systems.                    </p>
+                    <p class="text-gray-300">
+Recognized for his <b>cold mindset, clean execution, and no-fluff strategy,</b> he represents the new wave of digital leadership — built from pain, focused on power, and driven by purpose.                    </p>
+              <p class="text-gray-300 mb-4">
+Through his platforms, Okami is shaping a generation of digital hustlers into empire-builders, showing that with the right skills and mindset, there are <b>no limits to what can be achieved. </b>                  
 
-                <!-- Elite Card -->
-                <div class="pricing-card fade-in">
-                    <div class="card-header">
-                        <h3>👑 Elite Mentorship</h3>
-                        <div class="price">€75/Month (Recurring)</div>
-                    </div>
-                    <div class="card-body">
-                        <ul class="features">
-                            <li><i class="fas fa-check-circle"></i> 4 Weeks Private Chat Access</li>
-                            <li><i class="fas fa-check-circle"></i> 4 Live Zoom Calls (1 Per Week)</li>
-                            <li><i class="fas fa-check-circle"></i> Weekly Brand Action Steps</li>
-                            <li><i class="fas fa-check-circle"></i> Free First-Month Access to ElevateVA Space</li>
-                        </ul>
-                        
-                        <div class="rules">
-                            <h4>Important Rules</h4>
-                            <ul>
-                                <li>Fast Lane chat access ends after 7 days</li>
-                                <li>Elite stays active monthly, as long as you renew</li>
-                                <li>No refunds. Only results</li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="card-footer">
-                        <a href="#contact" class="btn">Join Elite - €75.99/Month</a>
-                    </div>
-                </div>
+</div>
             </div>
             
-            <div class="section-title" style="margin-top: 80px;">
-                <h2>🎯 Choose Your Path Now</h2>
-                <p>This is the moment that separates the learners from the leaders. Pick your level. Pay. And let's build your empire.</p>
-                <div style="margin-top: 30px;">
-                    <a href="#contact" class="btn">⚡ Join Fast Lane Mentorship - €25.99</a>
-                    <a href="#contact" class="btn btn-primary">👑 Join Elite Mentorship – €75.99 / Monthly</a>
+            <div class="text-center mb-12">
+                <h3 class="text-2xl font-heading font-bold mb-6">The Elders</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="elder-card p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mr-4">
+                                <i class="fas fa-user-tie text-gold text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Elder Marcus</h4>
+                                <p class="text-gold text-sm">Wealth Systems Architect</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">
+                            Master of financial engineering and wealth multiplication strategies. Former hedge fund manager turned digital empire builder.
+                        </p>
+                    </div>
+                    
+                    <div class="elder-card p-6 rounded-lg">
+                        <div class="flex items-center mb-4">
+                            <div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mr-4">
+                                <i class="fas fa-brain text-gold text-xl"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-lg">Elder Awaiting Revelation</h4>
+                                <p class="text-gold text-sm">To Be Announced</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300">
+A new Elder is being prepared to step into The Field. Their wisdom will unlock another path of mastery for Elevators and Field Players. Stay tuned — the empire is growing.                        </p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-
-    <!-- Contact Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get in Touch</h2>
-                <p>Have questions? Want to grab my free ebook?</p>
-            </div>
-            <div class="contact-container">
-                <div class="contact-info fade-in">
-                    <h3>Let's Connect</h3>
-                    <p>Have questions about the mentorship programs? Want to discuss your VA journey? Reach out and I'll get back to you within 24 hours.</p>
-                    <div class="social-icons">
-                         <a href="https://youtube.com/@theheadokaminalado?si=vDNB4aW0Wrmhp8gU">
-        <img src="youtube.jpeg" alt="Youtube" class="social-icon">
-    </a>
-                        <a href="https://wa.me/qr/IGNPCKFYUQUSJ1">
-        <img src="whatsapp.jpeg" alt="WhatsApp" class="social-icon">
-    </a>
-    <a href="https://www.tiktok.com/@theheadokaminalado?_t=ZS-8z7yOoljMxe&_r=1">
-        <img src="tiktok.jpeg" alt="Tiktok" class="social-icon">
-    </a>
-     <a href="https://www.instagram.com/theheadokaminalado?igsh=MWF2M3o1Yjc2aTdmMQ==">
-        <img src="instagram.jpeg" alt="Instagram" class="social-icon">
-    </a>
-     <a href="https://www.facebook.com/okaminalado?mibextid=ZbWKwL">
-        <img src="faceebook.jpeg" alt="Facebook" class="social-icon">
-    </a>
-     <a href="https://x.com/TheHeadOkami?t=g6dmnAChb2IYmOS7bLuUjA&s=09">
-        <img src="twitter.jpeg" alt="Twitter" class="social-icon">
-    </a>
-
+   
+    <!-- Community Section -->
+    <section id="community" class="container mx-auto px-4 py-20">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">The Community</h2>
+            <div class="w-24 h-1 bg-gold mx-auto"></div>
+            <p class="text-gray-300 max-w-2xl mx-auto mt-4">
+                This is where transformation happens. Connect with like-minded individuals on the same journey.
+            </p>
+        </div>
+        
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <a href="https://selar.com/189mo11592" target="_blank" class="community-link p-8 rounded-xl text-center">
+                <div class="w-16 h-16 rounded-full bg-dark mx-auto flex items-center justify-center mb-6 border border-gold">
+                    <img src="elevate.webp" alt="OkamiNalado" class="h-8 w-auto">
+                </div>
+                <h3 class="text-2xl font-heading font-bold mb-3">Elevators</h3>
+                <p class="text-gray-300 mb-4">
+                    ElevateVA Space Members Community
+                </p>
+                <div class="text-gold flex items-center justify-center">
+                    <span>Join Now</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </div>
+            </a>
+            
+            <a href="https://selar.com/55b1595ll7" target="_blank" class="community-link p-8 rounded-xl text-center">
+                <div class="w-16 h-16 rounded-full bg-dark mx-auto flex items-center justify-center mb-6 border-2 border-gold">
+                    <img src="field.jpeg" alt="OkamiNalado" class="h-8 w-auto">
+                </div>
+                <h3 class="text-2xl font-heading font-bold mb-3">Field Players</h3>
+                <p class="text-gray-300 mb-4">
+                    The Field Core Members Community
+                </p>
+                <div class="text-gold flex items-center justify-center">
+                    <span>Enter The Field</span>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                </div>
+            </a>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="container mx-auto px-4 py-20">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Transformation Stories</h2>
+            <div class="w-24 h-1 bg-gold mx-auto"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="testimonial-card p-6 rounded-lg">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-gold"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">
+Rachel Anne G. Pasturan</h4>
+                        <p class="text-sm text-gray-400">Student of Okami</p>
                     </div>
                 </div>
-                <div class="contact-form fade-in">
-                    <form action="https://formspree.io/f/mkgvwwpl" method="POST">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" name="name" class="form-control" required>
-                        </div>
-                         <div class="form-group">
-                            <label for="name">Phone Number</label>
-                            <input type="phone" name="phone" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email Address</label>
-                            <input type="email" name="email" class="form-control" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Your Message</label>
-                            <textarea n="message" class="form-control" required></textarea>
-                        </div>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
+                <p class="text-gray-300 italic">
+"Good learning pace"                </p>
+            </div>
+            
+            <div class="testimonial-card p-6 rounded-lg">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-gold"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold">Tatara.</h4>
+                        <p class="text-sm text-gray-400">Student of Okami</p>
+                    </div>
+                </div>
+                <p class="text-gray-300 italic">
+"I will soon start my own Agency Thank you Mr Okami for such a great course."            </div>
+        </div>
+    </section>
+    
+    <!-- CTA Section -->
+    <section class="py-20">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto p-1 rounded-xl bg-gradient-to-r from-gold via-yellow-500 to-gold">
+                <div class="bg-dark p-10 rounded-xl">
+                    <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">
+                        A New Wave of Digital Builders Is Rising.
+                    </h2>
+                    <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+                        The question is — will you step through the door?
+                    </p>
+                    <a href="#doors" class="luxury-button inline-block text-black font-bold py-4 px-10 rounded-lg text-lg">
+                        Choose Your Path
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-
+    
     <!-- Footer -->
-    <footer>
-        <div class="container">
-            <ul class="footer-nav">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#mentorship">Mentorship</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <p class="copyright">@ 2025 Okami Nalado The Head | All Rights Reserved</p>
+    <footer class="border-t border-gray-800 py-12">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center">
+                        <div class="lion-icon w-10 h-10 flex items-center justify-center">
+                            <img src="main.jpeg" alt="OkamiNalado" class="h-8 w-auto">
+                        </div>
+                        <h3 class="ml-2 text-xl font-heading font-bold">OKAMI NALADO (THE HEAD)</h3>
+                    </div>
+                    <p class="text-gray-500 mt-2 text-sm">Crafting Digital Empires</p>
+                </div>
+                
+                <div class="flex space-x-6">
+    <a href="https://youtube.com/@theheadokaminalado?si=6bRe9TjsXD0H8kMf" class="text-gray-400 hover:text-gold transition">
+        <i class="fab fa-youtube text-xl"></i>
+    </a>
+    <a href="https://www.tiktok.com/@theheadokaminalado?_t=ZS-8zwG8WIc93w&_r=1" class="text-gray-400 hover:text-gold transition">
+        <i class="fab fa-tiktok text-xl"></i>
+    </a>
+    <a href="https://www.facebook.com/okaminalado?mibextid=ZbWKwL" class="text-gray-400 hover:text-gold transition">
+        <i class="fab fa-facebook-f text-xl"></i>
+    </a>
+    <a href="https://www.instagram.com/theheadokaminalado?igsh=MWF2M3o1Yjc2aTdmMQ==" class="text-gray-400 hover:text-gold transition">
+        <i class="fab fa-instagram text-xl"></i>
+    </a>
+</div>
+            </div>
+            
+            <div class="divider my-8"></div>
+            
+            <div class="text-center text-gray-500 text-sm">
+                <p>© 2025 OkamiNalado. All rights reserved. Two Doors. One Transformation.</p>
+            </div>
         </div>
     </footer>
-
+    
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    window.scrollTo({
-                        top: target.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                    
-                    // Close mobile menu if open
-                    document.querySelector('.nav-links').classList.remove('active');
-                }
+        // Mobile menu toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const closeMenu = document.getElementById('close-menu');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+        
+        closeMenu.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+        
+        // Close menu when clicking on links
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
             });
         });
-
-        // Header scroll effect
-        window.addEventListener('scroll', function() {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Mobile menu toggle
-        document.querySelector('.hamburger').addEventListener('click', function() {
-            document.querySelector('.nav-links').classList.toggle('active');
-        });
-
-        // Fade-in animation on scroll
-        function fadeInOnScroll() {
+        
+        // Fade in animation on scroll
+        document.addEventListener('DOMContentLoaded', function() {
             const fadeElements = document.querySelectorAll('.fade-in');
             
-            fadeElements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.3;
-                
-                if (elementPosition < screenPosition) {
-                    element.classList.add('appear');
-                }
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('appear');
+                    }
+                });
+            }, {
+                threshold: 0.1
             });
-        }
-
-        window.addEventListener('scroll', fadeInOnScroll);
-        // Trigger on load in case elements are already in view
-        window.addEventListener('load', fadeInOnScroll);
-
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your message! I will get back to you soon.');
-            this.reset();
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 100,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
         });
     </script>
 </body>
-
 </html>
-
-
-
-
-
-
-
-
-
-
