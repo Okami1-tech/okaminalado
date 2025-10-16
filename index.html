@@ -33,7 +33,7 @@
   }
 }
     </script>
-    <!DOCTYPE html>
+   <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -179,6 +179,39 @@
         .gold-icon {
             filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
         }
+        
+        .pack-card {
+            transition: all 0.4s ease;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+        }
+        
+        .pack-card:hover {
+            border-color: #D4AF37;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px -10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .best-seller {
+            position: relative;
+            border: 2px solid #D4AF37;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+        }
+        
+        .best-seller::before {
+            content: 'BEST SELLER';
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #D4AF37;
+            color: #000;
+            font-size: 0.75rem;
+            font-weight: bold;
+            padding: 2px 10px;
+            border-radius: 20px;
+        }
     </style>
 </head>
 <body class="luxury-bg">
@@ -195,7 +228,7 @@
             <ul class="flex space-x-8">
                 <li><a href="#home" class="nav-link text-sm uppercase tracking-wider">Home</a></li>
                 <li><a href="#what-is-wavy" class="nav-link text-sm uppercase tracking-wider">What is Wavy</a></li>
-                <li><a href="#how-it-works" class="nav-link text-sm uppercase tracking-wider">How It Works</a></li>
+                <li><a href="#pricing" class="nav-link text-sm uppercase tracking-wider">Pricing</a></li>
                 <li><a href="#about" class="nav-link text-sm uppercase tracking-wider">About</a></li>
             </ul>
         </nav>
@@ -213,7 +246,7 @@
         <ul class="space-y-6">
             <li><a href="#home" class="block text-lg nav-link">Home</a></li>
             <li><a href="#what-is-wavy" class="block text-lg nav-link">What is Wavy</a></li>
-            <li><a href="#how-it-works" class="block text-lg nav-link">How It Works</a></li>
+            <li><a href="#pricing" class="block text-lg nav-link">Pricing</a></li>
             <li><a href="#about" class="block text-lg nav-link">About</a></li>
         </ul>
     </div>
@@ -233,7 +266,7 @@
                 A new kind of digital product built by Okami Nalado. Wavy turns prompts into powerful tools that automate real business tasks — from branding to proposals and content creation.
             </p>
             
-            <a href="#what-is-wavy" class="luxury-button text-black font-bold py-4 px-8 rounded-lg text-lg tracking-wider">
+            <a href="#pricing" class="luxury-button text-black font-bold py-4 px-8 rounded-lg text-lg tracking-wider">
                 Explore Wavy Packs
             </a>
         </div>
@@ -252,159 +285,227 @@
             </p>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <!-- Wavy VA -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
             <div class="luxury-card p-6 rounded-xl fade-in">
                 <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
                     <i class="fas fa-user-tie text-gold text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-heading font-bold text-center mb-3">Wavy VA</h3>
+                <h3 class="text-xl font-heading font-bold text-center mb-3">For Virtual Assistants</h3>
                 <p class="text-gray-300 text-center">
-                    AI systems for Virtual Assistants
+                    Automate client onboarding, proposals, and daily tasks
                 </p>
             </div>
             
-            <!-- Wavy Creator -->
             <div class="luxury-card p-6 rounded-xl fade-in">
                 <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
                     <i class="fas fa-paint-brush text-gold text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-heading font-bold text-center mb-3">Wavy Creator</h3>
+                <h3 class="text-xl font-heading font-bold text-center mb-3">For Content Creators</h3>
                 <p class="text-gray-300 text-center">
-                    Prompts for content creators
+                    Generate viral content, scripts, and captions in seconds
                 </p>
             </div>
             
-            <!-- Wavy Brand -->
             <div class="luxury-card p-6 rounded-xl fade-in">
                 <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
                     <i class="fas fa-crown text-gold text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-heading font-bold text-center mb-3">Wavy Brand</h3>
+                <h3 class="text-xl font-heading font-bold text-center mb-3">For Entrepreneurs</h3>
                 <p class="text-gray-300 text-center">
-                    Branding and strategy commands
+                    Build business systems and automate strategic decisions
                 </p>
             </div>
             
-            <!-- Wavy Hustle -->
             <div class="luxury-card p-6 rounded-xl fade-in">
                 <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
                     <i class="fas fa-briefcase text-gold text-2xl"></i>
                 </div>
-                <h3 class="text-xl font-heading font-bold text-center mb-3">Wavy Hustle</h3>
+                <h3 class="text-xl font-heading font-bold text-center mb-3">For Freelancers</h3>
                 <p class="text-gray-300 text-center">
-                    AI systems for business owners
+                    Speed up client work and deliver premium results
                 </p>
             </div>
         </div>
     </section>
     
-    <!-- How Wavy Works -->
-    <section id="how-it-works" class="container mx-auto px-4 py-20">
+    <!-- Pricing Section -->
+    <section id="pricing" class="container mx-auto px-4 py-20">
         <div class="text-center mb-16 fade-in">
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">How Wavy Works</h2>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Wavy Packs</h2>
             <div class="w-24 h-1 bg-gold mx-auto"></div>
         </div>
         
-        <div class="max-w-4xl mx-auto">
-            <div class="flex flex-col md:flex-row gap-8">
-                <div class="luxury-card p-8 rounded-xl text-center flex-1 fade-in">
-                    <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border-2 border-gold">
-                        <span class="text-2xl font-bold text-gold">1</span>
-                    </div>
-                    <h3 class="text-xl font-heading font-bold mb-3">Choose your Wavy Pack</h3>
-                    <p class="text-gray-300">
-                        Select the pack that matches your specific business needs
-                    </p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <!-- Wavy Starter Pack -->
+            <div class="pack-card p-8 rounded-xl">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-heading font-bold mb-2">Wavy Starter Pack</h3>
+                    <p class="text-gold">₦8,000 / $15</p>
+                    <p class="text-gray-400 mt-2">Perfect for beginners</p>
                 </div>
                 
-                <div class="luxury-card p-8 rounded-xl text-center flex-1 fade-in">
-                    <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border-2 border-gold">
-                        <span class="text-2xl font-bold text-gold">2</span>
-                    </div>
-                    <h3 class="text-xl font-heading font-bold mb-3">Copy the AI Command</h3>
-                    <p class="text-gray-300">
-                        Get the pre-written prompt ready to use
-                    </p>
-                </div>
-            </div>
-            
-            <div class="flex flex-col md:flex-row gap-8 mt-8">
-                <div class="luxury-card p-8 rounded-xl text-center flex-1 fade-in">
-                    <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border-2 border-gold">
-                        <span class="text-2xl font-bold text-gold">3</span>
-                    </div>
-                    <h3 class="text-xl font-heading font-bold mb-3">Paste into ChatGPT</h3>
-                    <p class="text-gray-300">
-                        Or any AI tool of your choice
-                    </p>
-                </div>
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>20 plug-and-play prompts</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Automate emails, content, branding</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Step-by-step guides</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Works with ChatGPT, Gemini, Claude</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Instant lifetime access</span>
+                    </li>
+                </ul>
                 
-                <div class="luxury-card p-8 rounded-xl text-center flex-1 fade-in">
-                    <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border-2 border-gold">
-                        <span class="text-2xl font-bold text-gold">4</span>
-                    </div>
-                    <h3 class="text-xl font-heading font-bold mb-3">Get Instant Results</h3>
-                    <p class="text-gray-300">
-                        Complete tasks in seconds instead of hours
-                    </p>
-                </div>
-            </div>
-            
-            <div class="text-center mt-12">
-                <a href="#cta" class="luxury-button inline-block text-black font-bold py-4 px-10 rounded-lg text-lg">
-                    Get Started with Wavy
+                <a href="#" class="luxury-button block text-center text-black font-bold py-3 rounded-lg">
+                    Get The Starter Pack
                 </a>
             </div>
-        </div>
-    </section>
-    
-    <!-- Why Wavy Works -->
-    <section class="container mx-auto px-4 py-20">
-        <div class="text-center mb-16 fade-in">
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">AI Made Simple</h2>
-            <div class="w-24 h-1 bg-gold mx-auto"></div>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-            <div class="luxury-card p-6 rounded-xl text-center fade-in">
-                <div class="w-12 h-12 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
-                    <i class="fas fa-ban text-gold"></i>
+            
+            <!-- Wavy VA Pack -->
+            <div class="pack-card p-8 rounded-xl">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-heading font-bold mb-2">Wavy VA Pack</h3>
+                    <p class="text-gold">₦10,000 / $20</p>
+                    <p class="text-gray-400 mt-2">For Virtual Assistants</p>
                 </div>
-                <h3 class="font-heading font-bold mb-2">No More Random Prompts</h3>
-                <p class="text-gray-300 text-sm">
-                    Just results that matter for your business
-                </p>
+                
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>25 advanced VA-focused prompts</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Automate proposals & onboarding</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Client briefs & reports templates</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Lifetime access & updates</span>
+                    </li>
+                </ul>
+                
+                <a href="#" class="luxury-button block text-center text-black font-bold py-3 rounded-lg">
+                    Get The VA Pack
+                </a>
             </div>
             
-            <div class="luxury-card p-6 rounded-xl text-center fade-in">
-                <div class="w-12 h-12 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
-                    <i class="fas fa-check-circle text-gold"></i>
+            <!-- Wavy Creator Pack -->
+            <div class="pack-card p-8 rounded-xl">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-heading font-bold mb-2">Wavy Creator Pack</h3>
+                    <p class="text-gold">₦10,000 / $20</p>
+                    <p class="text-gray-400 mt-2">For Content Creators</p>
                 </div>
-                <h3 class="font-heading font-bold mb-2">Tested Systems</h3>
-                <p class="text-gray-300 text-sm">
-                    Used by real digital professionals every day
-                </p>
+                
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>25 creative prompts</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Viral content generator</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Caption optimizer for all platforms</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Creative direction prompts</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Instant access</span>
+                    </li>
+                </ul>
+                
+                <a href="#" class="luxury-button block text-center text-black font-bold py-3 rounded-lg">
+                    Get The Creator Pack
+                </a>
             </div>
             
-            <div class="luxury-card p-6 rounded-xl text-center fade-in">
-                <div class="w-12 h-12 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
-                    <i class="fas fa-bolt text-gold"></i>
+            <!-- Wavy Empire Pack -->
+            <div class="pack-card p-8 rounded-xl best-seller">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-heading font-bold mb-2">Wavy Empire Pack</h3>
+                    <p class="text-gold">₦20,000 / $35</p>
+                    <p class="text-gray-400 mt-2">Best Seller</p>
                 </div>
-                <h3 class="font-heading font-bold mb-2">Speed & Precision</h3>
-                <p class="text-gray-300 text-sm">
-                    Every command built for maximum efficiency
-                </p>
+                
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>60+ elite prompts</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Includes all other packs</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Business System Builder PDF</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Empire Map roadmap</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Priority support & lifetime updates</span>
+                    </li>
+                </ul>
+                
+                <a href="#" class="luxury-button block text-center text-black font-bold py-3 rounded-lg">
+                    Get The Empire Pack
+                </a>
             </div>
             
-            <div class="luxury-card p-6 rounded-xl text-center fade-in">
-                <div class="w-12 h-12 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
-                    <i class="fas fa-users text-gold"></i>
+            <!-- Wavy Systems Pack -->
+            <div class="pack-card p-8 rounded-xl md:col-span-2 lg:col-span-1">
+                <div class="text-center mb-6">
+                    <h3 class="text-2xl font-heading font-bold mb-2">Wavy Systems Pack</h3>
+                    <p class="text-gold">₦15,000 / $28</p>
+                    <p class="text-gray-400 mt-2">For System Builders</p>
                 </div>
-                <h3 class="font-heading font-bold mb-2">Perfect for Professionals</h3>
-                <p class="text-gray-300 text-sm">
-                    Creators, freelancers, and entrepreneurs
-                </p>
+                
+                <ul class="space-y-3 mb-8">
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>30 prompts for workflow automation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Build Notion dashboards & Zapier flows</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>System setup guide included</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
+                        <span>Lifetime access</span>
+                    </li>
+                </ul>
+                
+                <a href="#" class="luxury-button block text-center text-black font-bold py-3 rounded-lg">
+                    Get The Systems Pack
+                </a>
             </div>
         </div>
     </section>
@@ -430,6 +531,9 @@
                     <p class="text-gray-300 mb-4">
                         <b>Okami Nalado,</b> widely known as <b> The Head,</b> is a <b>Digital Empire Architect and AI Strategist</b> dedicated to helping virtual assistants, freelancers, and digital entrepreneurs build lasting income, structure, and authority online.
                     </p>
+                    <p class="text-gray-300 mb-4">
+                        Founder of <b>ElevateVA Space</b> and <b>The Field,</b> Okami transforms ambitious beginners into powerful online earners by blending high-income skills, automation, and clarity-driven systems.
+                    </p>
                     <p class="text-gray-300">
                         Recognized for his <b>cold mindset, clean execution, and no-fluff strategy,</b> he represents the new wave of digital leadership — built from pain, focused on power, and driven by purpose.
                     </p>
@@ -442,7 +546,7 @@
     </section>
     
     <!-- CTA Section -->
-    <section id="cta" class="py-20">
+    <section class="py-20">
         <div class="container mx-auto px-4 text-center">
             <div class="max-w-3xl mx-auto p-1 rounded-xl bg-gradient-to-r from-gold via-yellow-500 to-gold">
                 <div class="bg-dark p-10 rounded-xl">
@@ -452,8 +556,8 @@
                     <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
                         Stop wasting time figuring out AI — use commands that actually get the job done.
                     </p>
-                    <a href="#what-is-wavy" class="luxury-button inline-block text-black font-bold py-4 px-10 rounded-lg text-lg">
-                        Shop Wavy Packs
+                    <a href="#pricing" class="luxury-button inline-block text-black font-bold py-4 px-10 rounded-lg text-lg">
+                        Explore Wavy Packs
                     </a>
                 </div>
             </div>
@@ -554,5 +658,3 @@
     </script>
 </body>
 </html>
-
-
