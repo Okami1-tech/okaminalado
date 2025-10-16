@@ -33,9 +33,12 @@
   }
 }
     </script>
-     <meta charset="UTF-8">
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OkamiNalado | Luxury Membership Hub</title>
+    <title>Wavy™ - AI Command System by Okami Nalado</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -82,25 +85,6 @@
             background-clip: text;
         }
         
-        .door-card {
-            transition: all 0.5s ease;
-            transform-style: preserve-3d;
-            perspective: 1000px;
-        }
-        
-        .door-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px -15px rgba(212, 175, 55, 0.4);
-        }
-        
-        .door-icon {
-            transition: all 0.3s ease;
-        }
-        
-        .door-card:hover .door-icon {
-            transform: scale(1.1);
-        }
-        
         .luxury-button {
             background: linear-gradient(45deg, #D4AF37, #F3E5AB, #D4AF37);
             background-size: 200% auto;
@@ -130,35 +114,17 @@
             left: 100%;
         }
         
-        .membership-card {
+        .luxury-card {
             background: rgba(10, 10, 10, 0.7);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(212, 175, 55, 0.3);
             transition: all 0.4s ease;
         }
         
-        .membership-card:hover {
+        .luxury-card:hover {
             border-color: #D4AF37;
             transform: translateY(-5px);
             box-shadow: 0 15px 35px -10px rgba(212, 175, 55, 0.3);
-        }
-        
-        .membership-card.premium {
-            border: 2px solid #D4AF37;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
-        }
-        
-        .membership-card.premium:hover {
-            box-shadow: 0 20px 40px -10px rgba(212, 175, 55, 0.4);
-        }
-        
-        .testimonial-card {
-            background: rgba(10, 10, 10, 0.8);
-            border-left: 3px solid #D4AF37;
-        }
-        
-        .glow-text {
-            text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
         }
         
         .divider {
@@ -210,45 +176,8 @@
             transform: translateX(0);
         }
         
-        .blog-card {
-            transition: all 0.3s ease;
-            border: 1px solid rgba(212, 175, 55, 0.2);
-        }
-        
-        .blog-card:hover {
-            transform: translateY(-5px);
-            border-color: #D4AF37;
-            box-shadow: 0 10px 20px -10px rgba(212, 175, 55, 0.3);
-        }
-        
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-        }
-        
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        
-        .elder-card {
-            background: rgba(10, 10, 10, 0.7);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-        
-        .community-link {
-            transition: all 0.3s ease;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-        }
-        
-        .community-link:hover {
-            border-color: #D4AF37;
-            background: rgba(212, 175, 55, 0.1);
+        .gold-icon {
+            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
         }
     </style>
 </head>
@@ -265,9 +194,9 @@
         <nav class="hidden md:block">
             <ul class="flex space-x-8">
                 <li><a href="#home" class="nav-link text-sm uppercase tracking-wider">Home</a></li>
-                <li><a href="#doors" class="nav-link text-sm uppercase tracking-wider">Choose Your Path</a></li>
-                <li><a href="#about" class="nav-link text-sm uppercase tracking-wider">Who is Okami Nalado?</a></li>
-                <li><a href="#community" class="nav-link text-sm uppercase tracking-wider">Community</a></li>
+                <li><a href="#what-is-wavy" class="nav-link text-sm uppercase tracking-wider">What is Wavy</a></li>
+                <li><a href="#how-it-works" class="nav-link text-sm uppercase tracking-wider">How It Works</a></li>
+                <li><a href="#about" class="nav-link text-sm uppercase tracking-wider">About</a></li>
             </ul>
         </nav>
         
@@ -283,93 +212,199 @@
         </button>
         <ul class="space-y-6">
             <li><a href="#home" class="block text-lg nav-link">Home</a></li>
-            <li><a href="#doors" class="block text-lg nav-link">Choose Your Path</a></li>
-            <li><a href="#about" class="block text-lg nav-link">Who is Okami Nalado?</a></li>
-            <li><a href="#community" class="block text-lg nav-link">Community</a></li>
+            <li><a href="#what-is-wavy" class="block text-lg nav-link">What is Wavy</a></li>
+            <li><a href="#how-it-works" class="block text-lg nav-link">How It Works</a></li>
+            <li><a href="#about" class="block text-lg nav-link">About</a></li>
         </ul>
     </div>
     
     <!-- Hero Section -->
     <section id="home" class="container mx-auto px-4 py-20 md:py-32 text-center">
         <div class="max-w-4xl mx-auto fade-in">
-            <div class="lion-icon w-24 h-24 mx-auto mb-8 flex items-center justify-center">
-                <img src="main.jpeg" alt="OkamiNalado" class="h-8 w-auto">
+            <div class="gold-icon w-24 h-24 mx-auto mb-8 flex items-center justify-center">
+                <i class="fas fa-wave-square text-gold text-5xl"></i>
             </div>
             
             <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
-                Two Doors. <span class="gold-gradient">One Transformation.</span>
+                Wavy™ — <span class="gold-gradient">AI Commands That Do The Work For You</span>
             </h1>
             
             <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12">
-                Step into the digital empire designed for those who demand excellence. Choose your path to mastery.
+                A new kind of digital product built by Okami Nalado. Wavy turns prompts into powerful tools that automate real business tasks — from branding to proposals and content creation.
             </p>
             
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="#elevate" class="luxury-button text-black font-bold py-4 px-8 rounded-lg text-lg tracking-wider">
-                    Enter ElevateVA Space
-                </a>
-                <a href="#field" class="border border-gold text-gold py-4 px-8 rounded-lg text-lg font-medium tracking-wider hover:bg-gold hover:text-black transition duration-300">
-                    Enter The Field Core
+            <a href="#what-is-wavy" class="luxury-button text-black font-bold py-4 px-8 rounded-lg text-lg tracking-wider">
+                Explore Wavy Packs
+            </a>
+        </div>
+    </section>
+    
+    <!-- What is Wavy Section -->
+    <section id="what-is-wavy" class="container mx-auto px-4 py-20">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">What is Wavy?</h2>
+            <div class="w-24 h-1 bg-gold mx-auto"></div>
+        </div>
+        
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <p class="text-lg text-gray-300">
+                Wavy is a system of high-performance AI commands that replace manual work. Each prompt is designed to perform a complete task — the same tools I use to automate my own digital empire.
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Wavy VA -->
+            <div class="luxury-card p-6 rounded-xl fade-in">
+                <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
+                    <i class="fas fa-user-tie text-gold text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-heading font-bold text-center mb-3">Wavy VA</h3>
+                <p class="text-gray-300 text-center">
+                    AI systems for Virtual Assistants
+                </p>
+            </div>
+            
+            <!-- Wavy Creator -->
+            <div class="luxury-card p-6 rounded-xl fade-in">
+                <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
+                    <i class="fas fa-paint-brush text-gold text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-heading font-bold text-center mb-3">Wavy Creator</h3>
+                <p class="text-gray-300 text-center">
+                    Prompts for content creators
+                </p>
+            </div>
+            
+            <!-- Wavy Brand -->
+            <div class="luxury-card p-6 rounded-xl fade-in">
+                <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
+                    <i class="fas fa-crown text-gold text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-heading font-bold text-center mb-3">Wavy Brand</h3>
+                <p class="text-gray-300 text-center">
+                    Branding and strategy commands
+                </p>
+            </div>
+            
+            <!-- Wavy Hustle -->
+            <div class="luxury-card p-6 rounded-xl fade-in">
+                <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
+                    <i class="fas fa-briefcase text-gold text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-heading font-bold text-center mb-3">Wavy Hustle</h3>
+                <p class="text-gray-300 text-center">
+                    AI systems for business owners
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- How Wavy Works -->
+    <section id="how-it-works" class="container mx-auto px-4 py-20">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">How Wavy Works</h2>
+            <div class="w-24 h-1 bg-gold mx-auto"></div>
+        </div>
+        
+        <div class="max-w-4xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-8">
+                <div class="luxury-card p-8 rounded-xl text-center flex-1 fade-in">
+                    <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border-2 border-gold">
+                        <span class="text-2xl font-bold text-gold">1</span>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3">Choose your Wavy Pack</h3>
+                    <p class="text-gray-300">
+                        Select the pack that matches your specific business needs
+                    </p>
+                </div>
+                
+                <div class="luxury-card p-8 rounded-xl text-center flex-1 fade-in">
+                    <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border-2 border-gold">
+                        <span class="text-2xl font-bold text-gold">2</span>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3">Copy the AI Command</h3>
+                    <p class="text-gray-300">
+                        Get the pre-written prompt ready to use
+                    </p>
+                </div>
+            </div>
+            
+            <div class="flex flex-col md:flex-row gap-8 mt-8">
+                <div class="luxury-card p-8 rounded-xl text-center flex-1 fade-in">
+                    <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border-2 border-gold">
+                        <span class="text-2xl font-bold text-gold">3</span>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3">Paste into ChatGPT</h3>
+                    <p class="text-gray-300">
+                        Or any AI tool of your choice
+                    </p>
+                </div>
+                
+                <div class="luxury-card p-8 rounded-xl text-center flex-1 fade-in">
+                    <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border-2 border-gold">
+                        <span class="text-2xl font-bold text-gold">4</span>
+                    </div>
+                    <h3 class="text-xl font-heading font-bold mb-3">Get Instant Results</h3>
+                    <p class="text-gray-300">
+                        Complete tasks in seconds instead of hours
+                    </p>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#cta" class="luxury-button inline-block text-black font-bold py-4 px-10 rounded-lg text-lg">
+                    Get Started with Wavy
                 </a>
             </div>
         </div>
     </section>
     
-    <!-- Doors Section -->
-    <section id="doors" class="container mx-auto px-4 py-16">
+    <!-- Why Wavy Works -->
+    <section class="container mx-auto px-4 py-20">
         <div class="text-center mb-16 fade-in">
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Choose Your Path</h2>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">AI Made Simple</h2>
             <div class="w-24 h-1 bg-gold mx-auto"></div>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
-            <!-- ElevateVA Door -->
-            <div id="elevate" class="door-card membership-card p-8 rounded-xl">
-                <div class="flex justify-center mb-6">
-                    <div class="door-icon w-20 h-20 rounded-full bg-dark flex items-center justify-center border border-gold">
-                        <img src="elevate.webp" alt="OkamiNalado" class="h-8 w-auto">
-                    </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+            <div class="luxury-card p-6 rounded-xl text-center fade-in">
+                <div class="w-12 h-12 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
+                    <i class="fas fa-ban text-gold"></i>
                 </div>
-                
-                <h3 class="text-2xl font-heading font-bold text-center mb-4">ElevateVA Space</h3>
-                
-                <p class="text-gray-300 text-center mb-6">
-                    Master the fundamentals of virtual assistance, branding, and freelance excellence. Build your foundation for digital success.
+                <h3 class="font-heading font-bold mb-2">No More Random Prompts</h3>
+                <p class="text-gray-300 text-sm">
+                    Just results that matter for your business
                 </p>
-                
-                <div class="text-center mb-8">
-                    <span class="text-3xl font-bold">$52.19</span>
-                    <span class="text-gray-400">/Month</span>
-                </div>
-                
-                <a href="https://selar.com/189mo11592" target="_blank" class="luxury-button block text-center text-black font-bold py-3 rounded-lg">
-                    Begin Your Journey
-                </a>
             </div>
             
-            <!-- Field Core Door -->
-            <div id="field" class="door-card membership-card premium p-8 rounded-xl">
-                <div class="flex justify-center mb-6">
-                    <div class="door-icon w-20 h-20 rounded-full bg-dark flex items-center justify-center border-2 border-gold">
-                        <img src="field.jpeg" alt="OkamiNalado" class="h-8 w-auto">
-                    </div>
+            <div class="luxury-card p-6 rounded-xl text-center fade-in">
+                <div class="w-12 h-12 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
+                    <i class="fas fa-check-circle text-gold"></i>
                 </div>
-                
-                <h3 class="text-2xl font-heading font-bold text-center mb-4">The Field Core</h3>
-                
-                <p class="text-gray-300 text-center mb-6">
-                    Elite mentorship, wealth transformation strategies, and exclusive access to the inner circle of digital mastery.
+                <h3 class="font-heading font-bold mb-2">Tested Systems</h3>
+                <p class="text-gray-300 text-sm">
+                    Used by real digital professionals every day
                 </p>
-                
-                <div class="text-center mb-8">
-                    <span class="text-3xl font-bold">$417.53</span>
-                    <span class="text-gray-400">/Month</span>
+            </div>
+            
+            <div class="luxury-card p-6 rounded-xl text-center fade-in">
+                <div class="w-12 h-12 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
+                    <i class="fas fa-bolt text-gold"></i>
                 </div>
-        
-                
-                <a href="https://selar.com/55b1595ll7" target="_blank" class="luxury-button block text-center text-black font-bold py-3 rounded-lg">
-                    Enter The Field
-                </a>
+                <h3 class="font-heading font-bold mb-2">Speed & Precision</h3>
+                <p class="text-gray-300 text-sm">
+                    Every command built for maximum efficiency
+                </p>
+            </div>
+            
+            <div class="luxury-card p-6 rounded-xl text-center fade-in">
+                <div class="w-12 h-12 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
+                    <i class="fas fa-users text-gold"></i>
+                </div>
+                <h3 class="font-heading font-bold mb-2">Perfect for Professionals</h3>
+                <p class="text-gray-300 text-sm">
+                    Creators, freelancers, and entrepreneurs
+                </p>
             </div>
         </div>
     </section>
@@ -382,167 +417,46 @@
         </div>
         
         <div class="max-w-4xl mx-auto">
-            <div class="flex flex-col md:flex-row gap-10 items-center mb-16">
+            <div class="flex flex-col md:flex-row gap-10 items-center">
                 <div class="flex-1">
-    <div class="rounded-xl overflow-hidden border border-gold p-1">
-        <div class="bg-gray-800 flex items-center justify-center">
-            <!-- Replace the icon with your image -->
-            <img src="okami.jpeg" alt="Okami Nalado" class="w-full h-auto object-cover">
-            
-            <!-- OR if you want to keep a fixed height container: -->
-            <!-- <div class="w-full h-96 flex items-center justify-center">
-                <img src="assets/images/your-profile-image.jpg" alt="Okami Nalado" class="max-h-full max-w-full object-contain">
-            </div> -->
-        </div>
-    </div>
-</div>       </div>
+                    <div class="rounded-xl overflow-hidden border border-gold p-1">
+                        <div class="bg-gray-800 aspect-square flex items-center justify-center">
+                            <img src="okami.jpeg" alt="Okami Nalado" class="w-full h-auto object-cover">
+                        </div>
                     </div>
                 </div>
                 <div class="flex-1">
                     <h3 class="text-2xl font-heading font-bold mb-4">The Digital Empire Architect</h3>
                     <p class="text-gray-300 mb-4">
-<b>Okami Nalado,</b> widely known as <b> The Head,</b> is a <b>Digital Empire Architect and AI Strategist</b> dedicated to helping virtual assistants, freelancers, and digital entrepreneurs build lasting income, structure, and authority online.                    </p>
+                        <b>Okami Nalado,</b> widely known as <b> The Head,</b> is a <b>Digital Empire Architect and AI Strategist</b> dedicated to helping virtual assistants, freelancers, and digital entrepreneurs build lasting income, structure, and authority online.
+                    </p>
                     <p class="text-gray-300 mb-4">
-Founder of <b>ElevateVA Space</b> and <b>The Field,</b> Okami transforms ambitious beginners into powerful online earners by blending high-income skills, automation, and clarity-driven systems.                    </p>
+                        Founder of <b>ElevateVA Space</b> and <b>The Field,</b> Okami transforms ambitious beginners into powerful online earners by blending high-income skills, automation, and clarity-driven systems.
+                    </p>
                     <p class="text-gray-300">
-Recognized for his <b>cold mindset, clean execution, and no-fluff strategy,</b> he represents the new wave of digital leadership — built from pain, focused on power, and driven by purpose.                    </p>
-              <p class="text-gray-300 mb-4">
-Through his platforms, Okami is shaping a generation of digital hustlers into empire-builders, showing that with the right skills and mindset, there are <b>no limits to what can be achieved. </b>                  
-
-</div>
-            </div>
-            
-            <div class="text-center mb-12">
-                <h3 class="text-2xl font-heading font-bold mb-6">The Elders</h3>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div class="elder-card p-6 rounded-lg">
-                        <div class="flex items-center mb-4">
-                            <div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mr-4">
-                                 <img src="zakka.jpg" alt="Elder Zakka Miracle" class="w-full h-full object-cover">
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Elder Zakka Miracle (ZMTHECEO)
-</h4>
-                                <p class="text-gold text-sm">CEO | Trader | Educator | Brand Builder</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-300">
-                            
-Zakka Miracle, CEO of Trailflux Capitals, is a skilled trader and strategist who decodes synthetic indices using time, price, structure, and volume traps. With a strong background in mathematics and trading psychology, he simplifies complex market behavior into clear, actionable systems. As an Elder in The Field, he brings precision, insight, and mentorship designed to help traders master the digital markets with clarity and confidence.
-
-                        </p>
-                    </div>
-                    
-                    <div class="elder-card p-6 rounded-lg">
-                        <div class="flex items-center mb-4">
-                            <div class="w-16 h-16 rounded-full bg-gray-800 flex items-center justify-center mr-4">
-                                <i class="fas fa-brain text-gold text-xl"></i>
-                            </div>
-                            <div>
-                                <h4 class="font-bold text-lg">Elder Awaiting Revelation</h4>
-                                <p class="text-gold text-sm">To Be Announced</p>
-                            </div>
-                        </div>
-                        <p class="text-gray-300">
-A new Elder is being prepared to step into The Field. Their wisdom will unlock another path of mastery for Elevators and Field Players. Stay tuned — the empire is growing.                        </p>
-                    </div>
+                        Recognized for his <b>cold mindset, clean execution, and no-fluff strategy,</b> he represents the new wave of digital leadership — built from pain, focused on power, and driven by purpose.
+                    </p>
+                    <p class="text-gray-300 mb-4">
+                        Through his platforms, Okami is shaping a generation of digital hustlers into empire-builders, showing that with the right skills and mindset, there are <b>no limits to what can be achieved.</b>
+                    </p>
                 </div>
             </div>
-        </div>
-    </section>
-   
-    <!-- Community Section -->
-    <section id="community" class="container mx-auto px-4 py-20">
-        <div class="text-center mb-16 fade-in">
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">The Community</h2>
-            <div class="w-24 h-1 bg-gold mx-auto"></div>
-            <p class="text-gray-300 max-w-2xl mx-auto mt-4">
-                This is where transformation happens. Connect with like-minded individuals on the same journey.
-            </p>
-        </div>
-        
-        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-            <a href="https://selar.com/189mo11592" target="_blank" class="community-link p-8 rounded-xl text-center">
-                <div class="w-16 h-16 rounded-full bg-dark mx-auto flex items-center justify-center mb-6 border border-gold">
-                    <img src="elevate.webp" alt="OkamiNalado" class="h-8 w-auto">
-                </div>
-                <h3 class="text-2xl font-heading font-bold mb-3">Elevators</h3>
-                <p class="text-gray-300 mb-4">
-                    ElevateVA Space Members Community
-                </p>
-                <div class="text-gold flex items-center justify-center">
-                    <span>Join Now</span>
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </div>
-            </a>
-            
-            <a href="https://selar.com/55b1595ll7" target="_blank" class="community-link p-8 rounded-xl text-center">
-                <div class="w-16 h-16 rounded-full bg-dark mx-auto flex items-center justify-center mb-6 border-2 border-gold">
-                    <img src="field.jpeg" alt="OkamiNalado" class="h-8 w-auto">
-                </div>
-                <h3 class="text-2xl font-heading font-bold mb-3">Field Players</h3>
-                <p class="text-gray-300 mb-4">
-                    The Field Core Members Community
-                </p>
-                <div class="text-gold flex items-center justify-center">
-                    <span>Enter The Field</span>
-                    <i class="fas fa-arrow-right ml-2"></i>
-                </div>
-            </a>
-        </div>
-    </section>
-    
-    <!-- Testimonials -->
-    <section class="container mx-auto px-4 py-20">
-        <div class="text-center mb-16 fade-in">
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Transformation Stories</h2>
-            <div class="w-24 h-1 bg-gold mx-auto"></div>
-        </div>
-        
-        <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div class="testimonial-card p-6 rounded-lg">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center mr-4">
-                        <i class="fas fa-user text-gold"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold">
-Rachel Anne G. Pasturan</h4>
-                        <p class="text-sm text-gray-400">Student of Okami</p>
-                    </div>
-                </div>
-                <p class="text-gray-300 italic">
-"Good learning pace"                </p>
-            </div>
-            
-            <div class="testimonial-card p-6 rounded-lg">
-                <div class="flex items-center mb-4">
-                    <div class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center mr-4">
-                        <i class="fas fa-user text-gold"></i>
-                    </div>
-                    <div>
-                        <h4 class="font-bold">Tatara.</h4>
-                        <p class="text-sm text-gray-400">Student of Okami</p>
-                    </div>
-                </div>
-                <p class="text-gray-300 italic">
-"I will soon start my own Agency Thank you Mr Okami for such a great course."            </div>
         </div>
     </section>
     
     <!-- CTA Section -->
-    <section class="py-20">
+    <section id="cta" class="py-20">
         <div class="container mx-auto px-4 text-center">
             <div class="max-w-3xl mx-auto p-1 rounded-xl bg-gradient-to-r from-gold via-yellow-500 to-gold">
                 <div class="bg-dark p-10 rounded-xl">
                     <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">
-                        A New Wave of Digital Builders Is Rising.
+                        Start Automating With Wavy Today
                     </h2>
                     <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
-                        The question is — will you step through the door?
+                        Stop wasting time figuring out AI — use commands that actually get the job done.
                     </p>
-                    <a href="#doors" class="luxury-button inline-block text-black font-bold py-4 px-10 rounded-lg text-lg">
-                        Choose Your Path
+                    <a href="#what-is-wavy" class="luxury-button inline-block text-black font-bold py-4 px-10 rounded-lg text-lg">
+                        Shop Wavy Packs
                     </a>
                 </div>
             </div>
@@ -564,25 +478,25 @@ Rachel Anne G. Pasturan</h4>
                 </div>
                 
                 <div class="flex space-x-6">
-    <a href="https://youtube.com/@theheadokaminalado?si=6bRe9TjsXD0H8kMf" class="text-gray-400 hover:text-gold transition">
-        <i class="fab fa-youtube text-xl"></i>
-    </a>
-    <a href="https://www.tiktok.com/@theheadokaminalado?_t=ZS-8zwG8WIc93w&_r=1" class="text-gray-400 hover:text-gold transition">
-        <i class="fab fa-tiktok text-xl"></i>
-    </a>
-    <a href="https://www.facebook.com/okaminalado?mibextid=ZbWKwL" class="text-gray-400 hover:text-gold transition">
-        <i class="fab fa-facebook-f text-xl"></i>
-    </a>
-    <a href="https://www.instagram.com/theheadokaminalado?igsh=MWF2M3o1Yjc2aTdmMQ==" class="text-gray-400 hover:text-gold transition">
-        <i class="fab fa-instagram text-xl"></i>
-    </a>
-</div>
+                    <a href="https://youtube.com/@theheadokaminalado?si=6bRe9TjsXD0H8kMf" class="text-gray-400 hover:text-gold transition">
+                        <i class="fab fa-youtube text-xl"></i>
+                    </a>
+                    <a href="https://www.tiktok.com/@theheadokaminalado?_t=ZS-8zwG8WIc93w&_r=1" class="text-gray-400 hover:text-gold transition">
+                        <i class="fab fa-tiktok text-xl"></i>
+                    </a>
+                    <a href="https://www.facebook.com/okaminalado?mibextid=ZbWKwL" class="text-gray-400 hover:text-gold transition">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/theheadokaminalado?igsh=MWF2M3o1Yjc2aTdmMQ==" class="text-gray-400 hover:text-gold transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                </div>
             </div>
             
             <div class="divider my-8"></div>
             
             <div class="text-center text-gray-500 text-sm">
-                <p>© 2025 OkamiNalado. All rights reserved. Two Doors. One Transformation.</p>
+                <p>© 2025 OkamiNalado. All rights reserved. Wavy™ AI Command System.</p>
             </div>
         </div>
     </footer>
