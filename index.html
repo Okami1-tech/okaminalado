@@ -27,9 +27,9 @@
   "jobTitle": "Digital Empire Architect",
   "worksFor": {
     "@type": "Organization",
-    "name": "ElevateVA Space"
+    "name": "Wavy"
         "@type": "Organization",
-    "name": "The Field"
+    "name": "Okami Nalado"
   }
 }
     </script>
@@ -38,7 +38,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wavy™ - AI Command System by Okami Nalado</title>
+    <title>Wavy - Premium Website Design Services | Okami Nalado</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
@@ -58,7 +58,8 @@
                     },
                     boxShadow: {
                         'luxury': '0 10px 30px -10px rgba(212, 175, 55, 0.3)',
-                        'glow': '0 0 20px rgba(212, 175, 55, 0.2)'
+                        'glow': '0 0 20px rgba(212, 175, 55, 0.2)',
+                        'purple-glow': '0 0 20px rgba(106, 13, 173, 0.3)'
                     }
                 }
             }
@@ -73,13 +74,21 @@
         }
         
         .luxury-bg {
-            background: radial-gradient(circle at top right, rgba(106, 13, 173, 0.15) 0%, transparent 40%),
-                        radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.1) 0%, transparent 40%),
-                        #000;
+            background: radial-gradient(circle at top right, rgba(106, 13, 173, 0.2) 0%, transparent 40%),
+                        radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.15) 0%, transparent 40%),
+                        linear-gradient(to bottom, #050505, #000);
+            background-attachment: fixed;
         }
         
         .gold-gradient {
             background: linear-gradient(90deg, #D4AF37, #F3E5AB, #D4AF37);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .purple-gradient {
+            background: linear-gradient(90deg, #6A0DAD, #D4AF37, #6A0DAD);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
@@ -91,6 +100,7 @@
             transition: all 0.5s ease;
             position: relative;
             overflow: hidden;
+            border: none;
         }
         
         .luxury-button:hover {
@@ -114,17 +124,65 @@
             left: 100%;
         }
         
+        .purple-button {
+            background: linear-gradient(45deg, #6A0DAD, #D4AF37, #6A0DAD);
+            background-size: 200% auto;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+            border: none;
+        }
+        
+        .purple-button:hover {
+            background-position: 100% center;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(106, 13, 173, 0.5);
+        }
+        
+        .purple-button::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .purple-button:hover::after {
+            left: 100%;
+        }
+        
         .luxury-card {
             background: rgba(10, 10, 10, 0.7);
             backdrop-filter: blur(10px);
             border: 1px solid rgba(212, 175, 55, 0.3);
             transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .luxury-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #6A0DAD, #D4AF37);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
         }
         
         .luxury-card:hover {
             border-color: #D4AF37;
             transform: translateY(-5px);
             box-shadow: 0 15px 35px -10px rgba(212, 175, 55, 0.3);
+        }
+        
+        .luxury-card:hover::before {
+            transform: scaleX(1);
         }
         
         .divider {
@@ -180,37 +238,105 @@
             filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
         }
         
-        .pack-card {
-            transition: all 0.4s ease;
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            background: rgba(10, 10, 10, 0.7);
-            backdrop-filter: blur(10px);
+        .purple-icon {
+            filter: drop-shadow(0 0 10px rgba(106, 13, 173, 0.7));
         }
         
-        .pack-card:hover {
+        .website-card {
+            background: rgba(10, 10, 10, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            transition: all 0.4s ease;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .website-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #6A0DAD, #D4AF37);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .website-card:hover {
             border-color: #D4AF37;
             transform: translateY(-5px);
             box-shadow: 0 15px 35px -10px rgba(212, 175, 55, 0.3);
         }
         
-        .best-seller {
-            position: relative;
-            border: 2px solid #D4AF37;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+        .website-card:hover::before {
+            transform: scaleX(1);
         }
         
-        .best-seller::before {
-            content: 'BEST SELLER';
+        .website-card img {
+            transition: transform 0.5s ease;
+        }
+        
+        .website-card:hover img {
+            transform: scale(1.05);
+        }
+        
+        .contact-button {
+            background: linear-gradient(45deg, #6A0DAD, #D4AF37, #6A0DAD);
+            background-size: 200% auto;
+            transition: all 0.5s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-button:hover {
+            background-position: 100% center;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px -5px rgba(106, 13, 173, 0.5);
+        }
+        
+        .contact-button::after {
+            content: '';
             position: absolute;
-            top: -12px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #D4AF37;
-            color: #000;
-            font-size: 0.75rem;
-            font-weight: bold;
-            padding: 2px 10px;
-            border-radius: 20px;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .contact-button:hover::after {
+            left: 100%;
+        }
+        
+        .wave-animation {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .wave-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
+            animation: wave 3s infinite;
+        }
+        
+        @keyframes wave {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+        
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .luxury-card:hover .service-icon {
+            transform: scale(1.1);
         }
     </style>
 </head>
@@ -227,8 +353,8 @@
         <nav class="hidden md:block">
             <ul class="flex space-x-8">
                 <li><a href="#home" class="nav-link text-sm uppercase tracking-wider">Home</a></li>
-                <li><a href="#what-is-wavy" class="nav-link text-sm uppercase tracking-wider">What is Wavy</a></li>
-                <li><a href="#pricing" class="nav-link text-sm uppercase tracking-wider">Pricing</a></li>
+                <li><a href="#services" class="nav-link text-sm uppercase tracking-wider">Services</a></li>
+                <li><a href="#showroom" class="nav-link text-sm uppercase tracking-wider">Website Showroom</a></li>
                 <li><a href="#about" class="nav-link text-sm uppercase tracking-wider">About</a></li>
             </ul>
         </nav>
@@ -245,8 +371,8 @@
         </button>
         <ul class="space-y-6">
             <li><a href="#home" class="block text-lg nav-link">Home</a></li>
-            <li><a href="#what-is-wavy" class="block text-lg nav-link">What is Wavy</a></li>
-            <li><a href="#pricing" class="block text-lg nav-link">Pricing</a></li>
+            <li><a href="#services" class="block text-lg nav-link">Services</a></li>
+            <li><a href="#showroom" class="block text-lg nav-link">Website Showroom</a></li>
             <li><a href="#about" class="block text-lg nav-link">About</a></li>
         </ul>
     </div>
@@ -255,257 +381,227 @@
     <section id="home" class="container mx-auto px-4 py-20 md:py-32 text-center">
         <div class="max-w-4xl mx-auto fade-in">
             <div class="gold-icon w-24 h-24 mx-auto mb-8 flex items-center justify-center">
-                <i class="fas fa-wave-square text-gold text-5xl"></i>
+                <i class="fas fa-laptop-code text-gold text-5xl"></i>
             </div>
             
             <h1 class="text-4xl md:text-6xl font-heading font-bold mb-6 leading-tight">
-                Wavy™ — <span class="gold-gradient">AI Commands That Do The Work For You</span>
+                Wavy - <span class="gold-gradient">Premium Website Design</span> Services
             </h1>
             
             <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-12">
-                A new kind of digital product built by Okami Nalado. Wavy turns prompts into powerful tools that automate real business tasks — from branding to proposals and content creation.
+                Transform your digital presence with professionally crafted websites that convert visitors into customers. Custom solutions for businesses of all sizes.
             </p>
             
-            <a href="#pricing" class="luxury-button text-black font-bold py-4 px-8 rounded-lg text-lg tracking-wider">
-                Explore Wavy Packs
-            </a>
-        </div>
-    </section>
-    
-    <!-- What is Wavy Section -->
-    <section id="what-is-wavy" class="container mx-auto px-4 py-20">
-        <div class="text-center mb-16 fade-in">
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">What is Wavy?</h2>
-            <div class="w-24 h-1 bg-gold mx-auto"></div>
-        </div>
-        
-        <div class="text-center max-w-3xl mx-auto mb-16">
-            <p class="text-lg text-gray-300">
-                Wavy is a system of high-performance AI commands that replace manual work. Each prompt is designed to perform a complete task — the same tools I use to automate my own digital empire.
-            </p>
-        </div>
-        
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <div class="luxury-card p-6 rounded-xl fade-in">
-                <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
-                    <i class="fas fa-user-tie text-gold text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-heading font-bold text-center mb-3">For Virtual Assistants</h3>
-                <p class="text-gray-300 text-center">
-                    Automate client onboarding, proposals, and daily tasks
-                </p>
-            </div>
-            
-            <div class="luxury-card p-6 rounded-xl fade-in">
-                <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
-                    <i class="fas fa-paint-brush text-gold text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-heading font-bold text-center mb-3">For Content Creators</h3>
-                <p class="text-gray-300 text-center">
-                    Generate viral content, scripts, and captions in seconds
-                </p>
-            </div>
-            
-            <div class="luxury-card p-6 rounded-xl fade-in">
-                <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
-                    <i class="fas fa-crown text-gold text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-heading font-bold text-center mb-3">For Entrepreneurs</h3>
-                <p class="text-gray-300 text-center">
-                    Build business systems and automate strategic decisions
-                </p>
-            </div>
-            
-            <div class="luxury-card p-6 rounded-xl fade-in">
-                <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-4 mx-auto border border-gold">
-                    <i class="fas fa-briefcase text-gold text-2xl"></i>
-                </div>
-                <h3 class="text-xl font-heading font-bold text-center mb-3">For Freelancers</h3>
-                <p class="text-gray-300 text-center">
-                    Speed up client work and deliver premium results
-                </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#showroom" class="luxury-button text-black font-bold py-4 px-8 rounded-lg text-lg tracking-wider">
+                    View Showroom
+                </a>
+                <a href="https://wa.me/234XXXXXXXXXX" class="purple-button text-white font-bold py-4 px-8 rounded-lg text-lg tracking-wider">
+                    Contact for Custom Work
+                </a>
             </div>
         </div>
     </section>
     
-    <!-- Pricing Section -->
-    <section id="pricing" class="container mx-auto px-4 py-20">
+    <!-- Services Section -->
+    <section id="services" class="container mx-auto px-4 py-20">
         <div class="text-center mb-16 fade-in">
-            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Wavy Packs</h2>
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Our Design Services</h2>
             <div class="w-24 h-1 bg-gold mx-auto"></div>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            <!-- Wavy Starter Pack -->
-            <div class="pack-card p-8 rounded-xl">
-                <div class="text-center mb-6">
-                    <h3 class="text-2xl font-heading font-bold mb-2">Wavy Starter Pack</h3>
-                    <p class="text-gold">₦15,500 / $10</p>
-                    <p class="text-gray-400 mt-2">Perfect for beginners</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Service 1 -->
+            <div class="luxury-card p-8 rounded-xl fade-in">
+                <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-6 mx-auto border border-gold">
+                    <i class="fas fa-shopping-cart text-gold text-2xl service-icon"></i>
                 </div>
-                
-                <ul class="space-y-3 mb-8">
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>20 plug-and-play prompts</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Automate emails, content, branding</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Step-by-step guides</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Works with ChatGPT, Gemini, Claude</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Instant lifetime access</span>
-                    </li>
-                </ul>
-                
-                <a href="https://tally.so/r/nG2qvp" class="luxury-button block text-center text-black font-bold py-3 rounded-lg">
-                    Get The Starter Pack
-                </a>
+                <h3 class="text-xl font-heading font-bold text-center mb-3">E-Commerce Websites</h3>
+                <p class="text-gray-300 text-center">
+                    Professional online stores with secure payment integration, inventory management, and conversion-optimized design.
+                </p>
             </div>
             
-            <!-- Wavy VA Pack -->
-            <div class="pack-card p-8 rounded-xl">
-                <div class="text-center mb-6">
-                    <h3 class="text-2xl font-heading font-bold mb-2">Wavy VA Pack</h3>
-                    <p class="text-gold">₦15,500 / $10</p>
-                    <p class="text-gray-400 mt-2">For Virtual Assistants</p>
+            <!-- Service 2 -->
+            <div class="luxury-card p-8 rounded-xl fade-in">
+                <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-6 mx-auto border border-gold">
+                    <i class="fas fa-building text-gold text-2xl service-icon"></i>
                 </div>
-                
-                <ul class="space-y-3 mb-8">
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>25 advanced VA-focused prompts</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Automate proposals & onboarding</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Client briefs & reports templates</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Lifetime access & updates</span>
-                    </li>
-                </ul>
-                
-                <a href="https://tally.so/r/nplJeb" class="luxury-button block text-center text-black font-bold py-3 rounded-lg">
-                    Get The VA Pack
-                </a>
+                <h3 class="text-xl font-heading font-bold text-center mb-3">Corporate Websites</h3>
+                <p class="text-gray-300 text-center">
+                    Professional business websites that establish credibility and showcase your services with modern design.
+                </p>
             </div>
             
-            <!-- Wavy Creator Pack -->
-            <div class="pack-card p-8 rounded-xl">
-                <div class="text-center mb-6">
-                    <h3 class="text-2xl font-heading font-bold mb-2">Wavy Creator Pack</h3>
-                    <p class="text-gold">₦15,500 / $10</p>
-                    <p class="text-gray-400 mt-2">For Content Creators</p>
+            <!-- Service 3 -->
+            <div class="luxury-card p-8 rounded-xl fade-in">
+                <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-6 mx-auto border border-gold">
+                    <i class="fas fa-blog text-gold text-2xl service-icon"></i>
                 </div>
-                
-                <ul class="space-y-3 mb-8">
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>25 creative prompts</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Viral content generator</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Caption optimizer for all platforms</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Creative direction prompts</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Instant access</span>
-                    </li>
-                </ul>
-                
-                <a href="https://tally.so/r/wLQaD1" class="luxury-button block text-center text-black font-bold py-3 rounded-lg">
-                    Get The Creator Pack
-                </a>
+                <h3 class="text-xl font-heading font-bold text-center mb-3">Content Websites</h3>
+                <p class="text-gray-300 text-center">
+                    Blog platforms, news sites, and content-driven websites with SEO-optimized architecture.
+                </p>
             </div>
             
-            <!-- Wavy Empire Pack -->
-            <div class="pack-card p-8 rounded-xl best-seller">
-                <div class="text-center mb-6">
-                    <h3 class="text-2xl font-heading font-bold mb-2">Wavy Empire Pack</h3>
-                    <p class="text-gold">₦37,500 / $25</p>
-                    <p class="text-gray-400 mt-2">Best Seller</p>
+            <!-- Service 4 -->
+            <div class="luxury-card p-8 rounded-xl fade-in">
+                <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-6 mx-auto border border-gold">
+                    <i class="fas fa-mobile-alt text-gold text-2xl service-icon"></i>
                 </div>
-                
-                <ul class="space-y-3 mb-8">
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>60+ elite prompts</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Includes all other packs</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Business System Builder PDF</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Empire Map roadmap</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Priority support & lifetime updates</span>
-                    </li>
-                </ul>
-                
-                <a href="https://tally.so/r/wvQJGQ" class="luxury-button block text-center text-black font-bold py-3 rounded-lg">
-                    Get The Empire Pack
-                </a>
+                <h3 class="text-xl font-heading font-bold text-center mb-3">Mobile-Responsive</h3>
+                <p class="text-gray-300 text-center">
+                    All websites are fully responsive and optimized for all devices, ensuring perfect experience on any screen.
+                </p>
             </div>
             
-            <!-- Wavy Systems Pack -->
-            <div class="pack-card p-8 rounded-xl md:col-span-2 lg:col-span-1">
-                <div class="text-center mb-6">
-                    <h3 class="text-2xl font-heading font-bold mb-2">Wavy Systems Pack</h3>
-                    <p class="text-gold">₦27,500 / $18</p>
-                    <p class="text-gray-400 mt-2">For System Builders</p>
+            <!-- Service 5 -->
+            <div class="luxury-card p-8 rounded-xl fade-in">
+                <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-6 mx-auto border border-gold">
+                    <i class="fas fa-bolt text-gold text-2xl service-icon"></i>
                 </div>
-                
-                <ul class="space-y-3 mb-8">
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>30 prompts for workflow automation</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Build Notion dashboards & Zapier flows</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>System setup guide included</span>
-                    </li>
-                    <li class="flex items-start">
-                        <i class="fas fa-check text-gold mt-1 mr-2"></i>
-                        <span>Lifetime access</span>
-                    </li>
-                </ul>
-                
-                <a href="https://tally.so/r/mBPjzN" class="luxury-button block text-center text-black font-bold py-3 rounded-lg">
-                    Get The Systems Pack
-                </a>
+                <h3 class="text-xl font-heading font-bold text-center mb-3">Performance Optimized</h3>
+                <p class="text-gray-300 text-center">
+                    Fast-loading websites that rank higher in search engines and provide excellent user experience.
+                </p>
+            </div>
+            
+            <!-- Service 6 -->
+            <div class="luxury-card p-8 rounded-xl fade-in">
+                <div class="w-16 h-16 rounded-full bg-dark flex items-center justify-center mb-6 mx-auto border border-gold">
+                    <i class="fas fa-search text-gold text-2xl service-icon"></i>
+                </div>
+                <h3 class="text-xl font-heading font-bold text-center mb-3">SEO Optimized</h3>
+                <p class="text-gray-300 text-center">
+                    Built with search engine optimization in mind to help your business rank higher and attract more visitors.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Website Showroom -->
+    <section id="showroom" class="container mx-auto px-4 py-20">
+        <div class="text-center mb-16 fade-in">
+            <h2 class="text-3xl md:text-4xl font-heading font-bold mb-4">Website Showroom</h2>
+            <p class="text-gray-300 max-w-2xl mx-auto mt-2">
+                Browse our collection of premium website templates ready for immediate deployment
+            </p>
+            <div class="w-24 h-1 bg-gold mx-auto mt-4"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Website Card 1 -->
+            <div class="website-card rounded-xl fade-in">
+                <div class="overflow-hidden">
+                    <img src="images/fashion-brand.jpg" alt="Fashion Brand Site" class="w-full h-56 object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-heading font-bold mb-2">Fashion Brand Site</h3>
+                    <p class="text-gray-300 mb-4">Elegant fashion e-commerce with modern aesthetics and seamless shopping experience.</p>
+                    <div class="flex gap-3">
+                        <a href="https://example-fashion-demo.netlify.app" target="_blank" class="luxury-button text-center text-black font-bold py-2 px-4 rounded-lg flex-1">
+                            View Demo
+                        </a>
+                        <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="contact-button text-center text-white font-bold py-2 px-4 rounded-lg flex-1">
+                            Contact to Buy
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Website Card 2 -->
+            <div class="website-card rounded-xl fade-in">
+                <div class="overflow-hidden">
+                    <img src="images/restaurant-website.jpg" alt="Restaurant Website" class="w-full h-56 object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-heading font-bold mb-2">Restaurant Website</h3>
+                    <p class="text-gray-300 mb-4">Modern restaurant site with menu display, reservation system, and online ordering.</p>
+                    <div class="flex gap-3">
+                        <a href="https://example-restaurant-demo.netlify.app" target="_blank" class="luxury-button text-center text-black font-bold py-2 px-4 rounded-lg flex-1">
+                            View Demo
+                        </a>
+                        <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="contact-button text-center text-white font-bold py-2 px-4 rounded-lg flex-1">
+                            Contact to Buy
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Website Card 3 -->
+            <div class="website-card rounded-xl fade-in">
+                <div class="overflow-hidden">
+                    <img src="images/fitness-app.jpg" alt="Fitness App Landing" class="w-full h-56 object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-heading font-bold mb-2">Fitness App Landing</h3>
+                    <p class="text-gray-300 mb-4">Engaging fitness app landing page with workout previews and subscription options.</p>
+                    <div class="flex gap-3">
+                        <a href="https://example-fitness-demo.netlify.app" target="_blank" class="luxury-button text-center text-black font-bold py-2 px-4 rounded-lg flex-1">
+                            View Demo
+                        </a>
+                        <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="contact-button text-center text-white font-bold py-2 px-4 rounded-lg flex-1">
+                            Contact to Buy
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Website Card 4 -->
+            <div class="website-card rounded-xl fade-in">
+                <div class="overflow-hidden">
+                    <img src="images/real-estate.jpg" alt="Real Estate Portal" class="w-full h-56 object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-heading font-bold mb-2">Real Estate Portal</h3>
+                    <p class="text-gray-300 mb-4">Comprehensive property listing platform with search filters and virtual tours.</p>
+                    <div class="flex gap-3">
+                        <a href="https://example-realestate-demo.netlify.app" target="_blank" class="luxury-button text-center text-black font-bold py-2 px-4 rounded-lg flex-1">
+                            View Demo
+                        </a>
+                        <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="contact-button text-center text-white font-bold py-2 px-4 rounded-lg flex-1">
+                            Contact to Buy
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Website Card 5 -->
+            <div class="website-card rounded-xl fade-in">
+                <div class="overflow-hidden">
+                    <img src="images/tech-startup.jpg" alt="Tech Startup Site" class="w-full h-56 object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-heading font-bold mb-2">Tech Startup Site</h3>
+                    <p class="text-gray-300 mb-4">Modern SaaS landing page with feature highlights and pricing tiers.</p>
+                    <div class="flex gap-3">
+                        <a href="https://example-tech-demo.netlify.app" target="_blank" class="luxury-button text-center text-black font-bold py-2 px-4 rounded-lg flex-1">
+                            View Demo
+                        </a>
+                        <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="contact-button text-center text-white font-bold py-2 px-4 rounded-lg flex-1">
+                            Contact to Buy
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Website Card 6 -->
+            <div class="website-card rounded-xl fade-in">
+                <div class="overflow-hidden">
+                    <img src="images/creative-agency.jpg" alt="Creative Agency Portfolio" class="w-full h-56 object-cover">
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-heading font-bold mb-2">Creative Agency Portfolio</h3>
+                    <p class="text-gray-300 mb-4">Portfolio site showcasing creative work with interactive case studies.</p>
+                    <div class="flex gap-3">
+                        <a href="https://example-agency-demo.netlify.app" target="_blank" class="luxury-button text-center text-black font-bold py-2 px-4 rounded-lg flex-1">
+                            View Demo
+                        </a>
+                        <a href="https://wa.me/234XXXXXXXXXX" target="_blank" class="contact-button text-center text-white font-bold py-2 px-4 rounded-lg flex-1">
+                            Contact to Buy
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -548,13 +644,13 @@
             <div class="max-w-3xl mx-auto p-1 rounded-xl bg-gradient-to-r from-gold via-yellow-500 to-gold">
                 <div class="bg-dark p-10 rounded-xl">
                     <h2 class="text-3xl md:text-4xl font-heading font-bold mb-6">
-                        Start Automating With Wavy Today
+                        Ready to Transform Your Digital Presence?
                     </h2>
                     <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
-                        Stop wasting time figuring out AI — use commands that actually get the job done.
+                        Join hundreds of satisfied clients who have elevated their business with our premium web design services.
                     </p>
-                    <a href="#pricing" class="luxury-button inline-block text-black font-bold py-4 px-10 rounded-lg text-lg">
-                        Explore Wavy Packs
+                    <a href="https://wa.me/234XXXXXXXXXX" class="luxury-button inline-block text-black font-bold py-4 px-10 rounded-lg text-lg">
+                        Contact for Custom Design
                     </a>
                 </div>
             </div>
@@ -594,7 +690,7 @@
             <div class="divider my-8"></div>
             
             <div class="text-center text-gray-500 text-sm">
-                <p>© 2025 OkamiNalado. All rights reserved. Wavy™ AI Command System.</p>
+                <p>© 2025 OkamiNalado. All rights reserved. Wavy Website Design Services.</p>
             </div>
         </div>
     </footer>
@@ -655,5 +751,3 @@
     </script>
 </body>
 </html>
-
-
