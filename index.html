@@ -60,314 +60,7 @@
   }
 }
     </script>
-   <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wavy - Premium Website Design Services | Okami Nalado</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        gold: '#D4AF37',
-                        dark: '#0a0a0a',
-                        deepPurple: '#6A0DAD',
-                        midnight: '#050505'
-                    },
-                    fontFamily: {
-                        heading: ['Playfair Display', 'serif'],
-                        body: ['Montserrat', 'sans-serif']
-                    },
-                    boxShadow: {
-                        'luxury': '0 10px 30px -10px rgba(212, 175, 55, 0.3)',
-                        'glow': '0 0 20px rgba(212, 175, 55, 0.2)',
-                        'purple-glow': '0 0 20px rgba(106, 13, 173, 0.3)'
-                    }
-                }
-            }
-        }
-    </script>
-    <style>
-        body {
-            background-color: #000;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-        }
-        
-        .luxury-bg {
-            background: radial-gradient(circle at top right, rgba(106, 13, 173, 0.2) 0%, transparent 40%),
-                        radial-gradient(circle at bottom left, rgba(212, 175, 55, 0.15) 0%, transparent 40%),
-                        linear-gradient(to bottom, #050505, #000);
-            background-attachment: fixed;
-        }
-        
-        .gold-gradient {
-            background: linear-gradient(90deg, #D4AF37, #F3E5AB, #D4AF37);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .purple-gradient {
-            background: linear-gradient(90deg, #6A0DAD, #D4AF37, #6A0DAD);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .luxury-button {
-            background: linear-gradient(45deg, #D4AF37, #F3E5AB, #D4AF37);
-            background-size: 200% auto;
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-            border: none;
-        }
-        
-        .luxury-button:hover {
-            background-position: 100% center;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.5);
-        }
-        
-        .luxury-button::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-        
-        .luxury-button:hover::after {
-            left: 100%;
-        }
-        
-        .purple-button {
-            background: linear-gradient(45deg, #6A0DAD, #D4AF37, #6A0DAD);
-            background-size: 200% auto;
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-            border: none;
-        }
-        
-        .purple-button:hover {
-            background-position: 100% center;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px -5px rgba(106, 13, 173, 0.5);
-        }
-        
-        .purple-button::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-        
-        .purple-button:hover::after {
-            left: 100%;
-        }
-        
-        .luxury-card {
-            background: rgba(10, 10, 10, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .luxury-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #6A0DAD, #D4AF37);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .luxury-card:hover {
-            border-color: #D4AF37;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px -10px rgba(212, 175, 55, 0.3);
-        }
-        
-        .luxury-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .divider {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, #D4AF37, transparent);
-        }
-        
-        .lion-icon {
-            filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.7));
-        }
-        
-        .nav-link {
-            position: relative;
-            padding-bottom: 5px;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #D4AF37;
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
-        }
-        
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 0.6s ease, transform 0.6s ease;
-        }
-        
-        .fade-in.appear {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        .mobile-menu {
-            transform: translateX(100%);
-            transition: transform 0.4s ease;
-        }
-        
-        .mobile-menu.open {
-            transform: translateX(0);
-        }
-        
-        .gold-icon {
-            filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
-        }
-        
-        .purple-icon {
-            filter: drop-shadow(0 0 10px rgba(106, 13, 173, 0.7));
-        }
-        
-        .website-card {
-            background: rgba(10, 10, 10, 0.7);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(212, 175, 55, 0.3);
-            transition: all 0.4s ease;
-            overflow: hidden;
-            position: relative;
-        }
-        
-        .website-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #6A0DAD, #D4AF37);
-            transform: scaleX(0);
-            transition: transform 0.3s ease;
-        }
-        
-        .website-card:hover {
-            border-color: #D4AF37;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px -10px rgba(212, 175, 55, 0.3);
-        }
-        
-        .website-card:hover::before {
-            transform: scaleX(1);
-        }
-        
-        .website-card img {
-            transition: transform 0.5s ease;
-        }
-        
-        .website-card:hover img {
-            transform: scale(1.05);
-        }
-        
-        .contact-button {
-            background: linear-gradient(45deg, #6A0DAD, #D4AF37, #6A0DAD);
-            background-size: 200% auto;
-            transition: all 0.5s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .contact-button:hover {
-            background-position: 100% center;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px -5px rgba(106, 13, 173, 0.5);
-        }
-        
-        .contact-button::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: 0.5s;
-        }
-        
-        .contact-button:hover::after {
-            left: 100%;
-        }
-        
-        .wave-animation {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .wave-animation::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.1), transparent);
-            animation: wave 3s infinite;
-        }
-        
-        @keyframes wave {
-            0% { left: -100%; }
-            100% { left: 100%; }
-        }
-        
-        .service-icon {
-            transition: all 0.3s ease;
-        }
-        
-        .luxury-card:hover .service-icon {
-            transform: scale(1.1);
-        }
-    </style>
-</head>
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -556,37 +249,10 @@
         .book-image {
             width: 320px;
             height: 480px;
-            background: linear-gradient(45deg, #d4af37, #b8860b);
+            object-fit: cover;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
-            position: relative;
-            overflow: hidden;
             border: 3px solid rgba(212, 175, 55, 0.3);
-        }
-
-        .book-image::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(45deg, rgba(15, 15, 15, 0.4), transparent);
-        }
-
-        .book-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #0f0f0f;
-            text-align: center;
-            padding: 30px;
-            z-index: 1;
-            text-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
-            max-width: 90%;
         }
 
         /* About Section */
@@ -604,7 +270,7 @@
             right: 0;
             bottom: 0;
             background-image: 
-                url("image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M30 0L60 30L30 60L0 30ZM30 10L50 30L30 50L10 30Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+                url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Cpath d='M30 0L60 30L30 60L0 30ZM30 10L50 30L30 50L10 30Z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
             opacity: 0.3;
         }
 
@@ -638,19 +304,10 @@
             width: 100%;
             max-width: 350px;
             height: 400px;
-            background: linear-gradient(45deg, #2a2a2a, #1a1a1a);
             border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            object-fit: cover;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
             border: 2px solid rgba(212, 175, 55, 0.2);
-        }
-
-        .author-placeholder {
-            font-size: 1.5rem;
-            color: #666;
-            text-align: center;
         }
 
         /* Book CTA Section */
@@ -854,9 +511,10 @@
     <nav>
         <div class="container">
             <div class="nav-content">
-               <div class="max-w-4xl mx-auto fade-in">
-            <div class="lion-icon w-24 h-24 mx-auto mb-8 flex items-center justify-center">
-                <img src="main.jpeg" alt="OkamiNalado" class="h-8 w-auto">
+                <div class="logo-section">
+                    <div class="logo">O</div>
+                    <div class="logo-text">OKAMI NALADO</div>
+                </div>
             </div>
         </div>
     </nav>
@@ -874,9 +532,7 @@
                     </div>
                 </div>
                 <div class="book-cover fade-in">
-            <img src="book.jpeg" alt="Okami Nalado" class="w-full h-auto object-cover">
-                        <div class="book-title">THE REAL ORDER<br>31 LAWS</div>
-                    </div>
+                    <img src="book.jpeg" alt="The Real Order Book Cover" class="book-image">
                 </div>
             </div>
         </div>
@@ -886,8 +542,8 @@
     <section class="about">
         <div class="container">
             <div class="section-content">
-                <div class="author-image fade-in">
-            <img src="okami.jpeg" alt="Okami Nalado" class="w-full h-auto object-cover">
+                <div class="fade-in">
+                    <img src="okami.jpeg" alt="Okami Nalado" class="author-image">
                 </div>
                 <div class="about-text fade-in">
                     <h2 class="about-heading">The Voice Behind the Laws</h2>
@@ -908,9 +564,7 @@
                     <a href="#" class="btn btn-secondary">Hardcopy</a>
                 </div>
                 <div class="book-cover fade-in" style="margin: 60px auto; max-width: 320px;">
-            <img src="book.jpeg" alt="Okami Nalado" class="w-full h-auto object-cover">
-                        <div class="book-title">THE REAL ORDER<br>31 LAWS</div>
-                    </div>
+                    <img src="book.jpeg" alt="The Real Order Book Cover" class="book-image">
                 </div>
             </div>
         </div>
@@ -999,12 +653,5 @@
     </script>
 </body>
 </html>
-</html>
-
-
-
-
-
-
 
 
