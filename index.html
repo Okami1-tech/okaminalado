@@ -1,305 +1,810 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-            <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore the work of Okami Nalado, Author & Founder of Wavy Receipts. Discover his book, innovative app, and connect to learn more." />
-  <meta name="author" content="Okami Nalado" />
-  
-  <!-- Structured Data (JSON-LD) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Okami Nalado",
-    "url": "https://okaminalado.com",
-    "image": "https://okaminalado.com/okami.jpeg",
-    "sameAs": [
-      "https://x.com/okami_nalado?t=LRT5H-7Gfqen2aLh1DEWUw&s=09",
-    ],
-    "jobTitle": "Author, Founder of Wavy Receipts",
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Wavy™"
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Okami Enoch Nalado popularly known as The Head is a Digital Empire Architect, the only one in Nigeria ans Africa at large, making him the best at what he does" />
+    <meta name="author" content="Okami Enoch Nalado" />
+    
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Okami Enoch Nalado",
+      "url": "https://okaminalado.com",
+      "image": "https://okaminalado.com/okami.jpeg",
+      "sameAs": [
+        "https://x.com/okami_nalado?t=LRT5H-7Gfqen2aLh1DEWUw&s=09"
+      ],
+      "jobTitle": "Author, Founder of ElevateVA Space",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "ElevateVA Space"
+      }
     }
-  }
-  </script>
+    </script>
+    <title>Okami Enoch Nalado - Digital Empire Architect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  <title>Okami Nalado – Author & Founder of Wavy Receipts</title>
-  <link rel="icon" href="favicon.png" type="image/png" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet" />
-  
-  <style>
-    :root {
-      --black: #0f0f0f;
-      --white: #f8f8f8;
-      --gold: #d4af37;
-      --neon: #00f7ff; /* electric cyan / wavy blue */
-      --font-serif: 'Playfair Display', serif;
-      --font-sans: 'Inter', sans-serif;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0B0B0B;
+            color: white;
+            line-height: 1.6;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
 
-    body {
-      background-color: var(--black);
-      color: var(--white);
-      font-family: var(--font-sans);
-      line-height: 1.6;
-      overflow-x: hidden;
-    }
+        /* Mobile-First Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: rgba(11, 11, 11, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
 
-    h1, h2, h3 {
-      font-family: var(--font-serif);
-      font-weight: 900;
-    }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    a {
-      text-decoration: none;
-      color: var(--gold);
-      transition: color 0.3s ease;
-    }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: white;
+        }
 
-    a:hover {
-      color: var(--neon);
-    }
+        .menu-toggle {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 6px;
+        }
 
-    section {
-      padding: 80px 20px;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
+        .menu-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
 
-    .container {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
-    }
+        /* Dropdown Menu */
+        .dropdown-menu {
+            position: absolute;
+            top: 60px;
+            right: 1rem;
+            background: rgba(15, 23, 42, 0.98);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(126, 34, 206, 0.3);
+            border-radius: 12px;
+            padding: 1rem;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
 
-    .text-content {
-      flex: 1;
-      min-width: 300px;
-    }
+        .dropdown-menu.active {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
 
-    .visual-content {
-      flex: 1;
-      min-width: 300px;
-      text-align: center;
-    }
+        .dropdown-menu a {
+            display: block;
+            color: #E0E0E0;
+            text-decoration: none;
+            padding: 0.8rem 1rem;
+            border-radius: 6px;
+            margin: 0.2rem 0;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
 
-    .visual-content img {
-      max-width: 100%;
-      border-radius: 8px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
+        .dropdown-menu a:hover {
+            color: white;
+            background: rgba(126, 34, 206, 0.2);
+        }
 
-    .cta-button {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 12px 28px;
-      background: transparent;
-      border: 2px solid var(--gold);
-      color: var(--gold);
-      font-family: var(--font-sans);
-      font-weight: 600;
-      border-radius: 30px;
-      transition: all 0.3s ease;
-    }
+        .dropdown-menu .request-btn {
+            background: linear-gradient(135deg, #7e22ce 0%, #8b5cf6 100%);
+            color: white;
+            padding: 0.8rem 1rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin-top: 0.5rem;
+            width: 100%;
+            text-align: center;
+            display: inline-block;
+        }
 
-    .cta-button:hover {
-      background: var(--gold);
-      color: var(--black);
-      border-color: var(--gold);
-      transform: translateY(-2px);
-    }
+        .dropdown-menu .request-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(126, 34, 206, 0.3);
+        }
 
-    .neon-hover:hover {
-      color: var(--neon) !important;
-      border-color: var(--neon);
-    }
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            position: relative;
+        }
 
-    header {
-      text-align: center;
-      padding-top: 40px;
-    }
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
 
-    header img {
-      height: 60px;
-      margin-bottom: 20px;
-    }
+        .hero-image {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            aspect-ratio: 1/1;
+            background: url('okami.jpeg') center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-    .hero {
-      text-align: center;
-      padding: 100px 20px;
-      background: linear-gradient(135deg, rgba(15,15,15,0.9), rgba(10,10,20,0.95)), url('main.jpeg') center/cover no-repeat;
-      position: relative;
-    }
+        .hero-text h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, white 0%, #d1d5db 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-    .hero h1 {
-      font-size: 3.5rem;
-      margin-bottom: 20px;
-      animation: fadeIn 1.2s ease;
-    }
+        .hero-text .subtitle {
+            font-size: 1.1rem;
+            color: #a78bfa;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
 
-    .hero p {
-      font-size: 1.3rem;
-      max-width: 700px;
-      margin: 0 auto 30px;
-      animation: fadeIn 1.5s ease;
-    }
+        .hero-text .tagline {
+            font-size: 1rem;
+            color: #d1d5db;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
 
-    .hero-buttons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      animation: fadeIn 1.8s ease;
-    }
+        .hero-buttons {
+            display: flex;
+            gap: 0.8rem;
+            flex-wrap: wrap;
+        }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
+        .main-btn, .secondary-btn {
+            padding: 0.8rem 1.5rem;
+            border-radius: 8px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            font-size: 0.9rem;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
 
-    .book-grid {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-      justify-content: center;
-      align-items: center;
-    }
+        .main-btn {
+            background: linear-gradient(135deg, #7e22ce 0%, #8b5cf6 100%);
+            color: white;
+        }
 
-    .book-cover {
-      max-width: 250px;
-      border: 2px solid var(--gold);
-      border-radius: 8px;
-    }
+        .secondary-btn {
+            background: transparent;
+            color: #a78bfa;
+            border: 2px solid #a78bfa;
+        }
 
-    .social-icons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-      font-size: 1.8rem;
-    }
+        .main-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(126, 34, 206, 0.4);
+        }
 
-    footer {
-      text-align: center;
-      padding: 40px 20px;
-      border-top: 1px solid #333;
-      color: #aaa;
-      font-size: 0.9rem;
-    }
+        .secondary-btn:hover {
+            background: rgba(126, 34, 206, 0.1);
+            transform: translateY(-2px);
+        }
 
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.5rem; }
-      .hero p { font-size: 1.1rem; }
-      .container { flex-direction: column; }
-    }
-  </style>
+        /* Section Styles */
+        section {
+            padding: 4rem 0;
+        }
+
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(135deg, #7e22ce 0%, #8b5cf6 100%);
+            border-radius: 2px;
+        }
+
+        /* What I Do Section */
+        .what-i-do {
+            background: linear-gradient(135deg, rgba(126, 34, 206, 0.05) 0%, rgba(139, 92, 246, 0.05) 100%);
+        }
+
+        .what-i-do p {
+            text-align: center;
+            font-size: 1rem;
+            color: #d1d5db;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: rgba(31, 41, 55, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(126, 34, 206, 0.3);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: white;
+            margin-bottom: 0.8rem;
+        }
+
+        .service-card ul {
+            list-style: none;
+            margin: 1rem 0;
+        }
+
+        .service-card li {
+            color: #d1d5db;
+            margin-bottom: 0.6rem;
+            position: relative;
+            padding-left: 1.2rem;
+            font-size: 0.9rem;
+        }
+
+        .service-card li::before {
+            content: '•';
+            color: #a78bfa;
+            position: absolute;
+            left: 0;
+        }
+
+        .investment {
+            color: #a78bfa;
+            font-weight: 600;
+            font-size: 1rem;
+            margin: 0.8rem 0;
+        }
+
+        .optional {
+            color: #9ca3af;
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        /* How It Works Section */
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 1.5rem;
+        }
+
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #7e22ce 0%, #8b5cf6 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            font-weight: 600;
+            font-size: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .step h3 {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .step p {
+            color: #d1d5db;
+            font-size: 0.9rem;
+        }
+
+        /* About Section */
+        .about-content {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .about-content p {
+            color: #d1d5db;
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+
+        /* ElevateVA Section */
+        .elevaterva {
+            background: rgba(15, 23, 42, 0.8);
+            border: 1px solid rgba(126, 34, 206, 0.2);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+            margin: 1.5rem auto;
+            max-width: 400px;
+        }
+
+        .elevaterva p {
+            color: #9ca3af;
+            font-size: 0.8rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .elevaterva-btn {
+            background: transparent;
+            color: #a78bfa;
+            border: 1px solid #a78bfa;
+            padding: 0.4rem 0.8rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .elevaterva-btn:hover {
+            background: rgba(126, 34, 206, 0.1);
+        }
+
+        /* Rate Card Section */
+        .rate-card-content {
+            background: rgba(31, 41, 55, 0.5);
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .rate-card-content h3 {
+            font-family: 'Playfair Display', serif;
+            color: white;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .rate-card-content p {
+            color: #d1d5db;
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .pricing-grid {
+            display: grid;
+            gap: 0.8rem;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        .pricing-item {
+            background: rgba(126, 34, 206, 0.1);
+            padding: 0.8rem;
+            border-radius: 8px;
+        }
+
+        .pricing-item strong {
+            color: #a78bfa;
+        }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+                gap: 3rem;
+            }
+            
+            .hero-text h1 {
+                font-size: 3rem;
+            }
+            
+            .hero-text .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .hero-text .tagline {
+                font-size: 1.1rem;
+            }
+            
+            .section-title {
+                font-size: 2.5rem;
+            }
+            
+            .services-grid {
+                grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            }
+            
+            .process-steps {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 2rem;
+            }
+            
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-buttons {
+                justify-content: center;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-content p {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Smooth Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container nav-container">
+            <div class="logo">OKAMI ENOCH</div>
+            <button class="menu-toggle" onclick="toggleMenu()">
+                ☰
+            </button>
+        </div>
+        
+        <!-- Dropdown Menu -->
+        <div class="dropdown-menu" id="dropdownMenu">
+            <a href="#home">Home</a>
+            <a href="#whatido">What I Do</a>
+            <a href="#services">Services</a>
+            <a href="#howitworks">How It Works</a>
+            <a href="#about">About</a>
+            <a href="#ratecard">Rate Card</a>
+            <a href="https://wa.me/qr/IGNPCKFYUQUSJ1" class="request-btn" target="_blank">Request Service</a>
+        </div>
+    </nav>
 
-  <header>
-    <img src="main.jpeg" alt="Okami Nalado Logo" />
-  </header>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <div class="hero-image">
+                <!-- Image will be loaded from okami.jpeg -->
+            </div>
+            <div class="hero-text">
+                <h1>Okami Enoch Nalado<br><span style="font-size: 1.8rem;">(The Head)</span></h1>
+                <div class="subtitle">Digital Empire Architect</div>
+                <p class="tagline">I design systems, brands, and digital assets that generate income — not noise.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/qr/IGNPCKFYUQUSJ1" class="main-btn" target="_blank">Request Service</a>
+                    <a href="#ratecard" class="secondary-btn">View Rate Card</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>Okami Nalado – Author & Founder of Wavy Receipts</h1>
-    <p>Building digital tools and stories that empower creators, entrepreneurs, and visionaries to turn ideas into reality.</p>
-    <div class="hero-buttons">
-      <a href="https://amazon.com/your-book-link" target="_blank" class="cta-button neon-hover">📖 Explore My Book</a>
-      <a href="https://wavyreceipts.com" class="cta-button neon-hover">💻 Discover Wavy Receipts</a>
-    </div>
-  </section>
+    <!-- What I Do Section -->
+    <section id="whatido" class="what-i-do">
+        <div class="container">
+            <h2 class="section-title fade-in">What I Do</h2>
+            <p class="fade-in">
+                I build done-for-you digital infrastructure that transforms your vision into scalable, profitable systems. 
+                No templates, no shortcuts — just premium digital architecture that works.
+            </p>
+        </div>
+    </section>
 
-  <!-- About Section -->
-  <section id="about">
-    <div class="container">
-      <div class="text-content">
-        <h2>Who I Am & Why I Do It</h2>
-        <p>
-          I’m Okami Nalado— a storyteller, innovator, and problem-solver. I wrote my book to share the principles that shaped my journey and built Wavy Receipts to simplify digital transactions for creators and entrepreneurs.
-        </p>
-        <p>
-          Every project I take on is driven by one goal: to create tools and content that empower people to turn their ideas into real, lasting impact. This is more than business — it’s about leaving a mark and building systems that outlive trends.
-        </p>
-        <p>
-          I believe in bold ideas, action over hesitation, and building things that matter. Whether through my writing or my digital ventures, I want to help others take control of their future and make it extraordinary.
-        </p>
-        <a href="#books" class="cta-button">📖 Learn More About My Story</a>
-      </div>
-      <div class="visual-content">
-        <img src="okami.jpeg" alt="Okami Nalado – Founder of Wavy Receipts" />
-      </div>
-    </div>
-  </section>
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title fade-in">Services</h2>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <h3>Personal Brand & Business Websites</h3>
+                    <ul>
+                        <li>Landing Pages</li>
+                        <li>Business Websites</li>
+                        <li>Funnels</li>
+                        <li>Conversion-focused design</li>
+                    </ul>
+                    <div class="investment">Starting Investment: ₦250,000</div>
+                    <p>Positioned to feel cheap relative to the value delivered</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <h3>Strategy & Consulting</h3>
+                    <ul>
+                        <li>1-on-1 sessions</li>
+                        <li>Brand positioning</li>
+                        <li>Monetisation clarity</li>
+                        <li>Paid sessions only</li>
+                    </ul>
+                    <div class="investment">By Appointment Only</div>
+                    <p>Exclusive strategy sessions for serious entrepreneurs</p>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <h3>Design & Systems (Optional Add-ons)</h3>
+                    <ul>
+                        <li>Brand Kits</li>
+                        <li>Graphics Design</li>
+                        <li>Backend Setup</li>
+                        <li>Basic automation</li>
+                    </ul>
+                    <div class="investment">Optional Add-ons</div>
+                    <p class="optional">Marked as optional, not required</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Books Section -->
-  <section id="books">
-    <h2 style="text-align: center; margin-bottom: 40px;">My Book</h2>
-    <div class="book-grid">
-      <img src="book.jpeg" alt="Book Cover" class="book-cover" />
-      <div class="text-content" style="text-align: center; max-width: 600px;">
-        <p>
-          Dive into my latest book, where I share the strategies, lessons, and mindset shifts that helped me create real impact. Whether you’re an aspiring entrepreneur or a creator looking to scale, this book is your blueprint to take action and win.
-        </p>
-        <a href="https://amazon.com/your-book-link" target="_blank" class="cta-button neon-hover">📖 Get the Book</a>
-      </div>
-    </div>
-  </section>
+    <!-- How It Works Section -->
+    <section id="howitworks" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title fade-in">How It Works</h2>
+            <div class="process-steps">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <h3>Request Service</h3>
+                    <p>Submit your project details and requirements</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <h3>Receive Rate Card</h3>
+                    <p>Get detailed pricing and scope information</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <h3>Invoice Issued</h3>
+                    <p>Payment secured before any work begins</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">4</div>
+                    <h3>Project Execution</h3>
+                    <p>Professional delivery of your digital empire</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <!-- Wavy Receipts Section -->
-  <section id="wavy">
-    <div class="container">
-      <div class="text-content">
-        <h2>Wavy Receipts – Simplifying Digital Transactions</h2>
-        <p>
-          Wavy Receipts is built to make your financial and creative life seamless. Designed for creators, entrepreneurs, and small business owners, it combines simplicity with premium features that save time and give clarity.
-        </p>
-        <p>
-          Whether you’re tracking income, sending professional receipts, or managing clients, Wavy Receipts makes it effortless.
-        </p>
-        <a href="https://wavyreceipts.com" class="cta-button neon-hover">💻 Try Wavy Receipts – Free</a>
-        <p style="margin-top: 20px; font-size: 0.95rem; color: #bbb;">
-        </p>
-      </div>
-      <div class="visual-content">
-        <img src="wavy.jpeg" alt="Wavy Receipts App Interface" />
-      </div>
-    </div>
-  </section>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title fade-in">About</h2>
+            <div class="about-content">
+                <p>I'm Okami Enoch Nalado, Digital Empire Architect. I specialize in building premium digital infrastructure for serious entrepreneurs and brands who demand excellence.</p>
+                <p>My approach combines strategic thinking with flawless execution, ensuring every digital asset I create generates sustainable revenue and stands the test of time.</p>
+                <p>I also founded <span style="color: #a78bfa;">ElevateVA Space</span>, a platform for mentoring and producing high-level digital operators. <a href="https://tinyurl.com/ElevateVA-Space" style="color: #a78bfa; text-decoration: none;" target="_blank">Learn more</a>.</p>
+            </div>
+        </div>
+    </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2 style="text-align: center; margin-bottom: 30px;">Connect With Me</h2>
-    <p style="text-align: center; max-width: 600px; margin: 0 auto 30px;">
-      Have questions, feedback, or want to collaborate? Reach out — I love connecting with creators and innovators.
-    </p>
-    <div class="social-icons">
-      <!-- Replace with your actual links -->
-      <a href="https://x.com/okami_nalado?t=LRT5H-7Gfqen2aLh1DEWUw&s=09" target="_blank" aria-label="Twitter">𝕏</a>
-      
-    </div>
-    <div style="text-align: center; margin-top: 20px;">
-      <a href="mailto:okaminalado@gmail.com" class="cta-button neon-hover">📩 Send Me a Message</a>
-    </div>
-  </section>
+    <!-- ElevateVA Section -->
+    <section class="elevaterva-section">
+        <div class="container">
+            <div class="elevaterva fade-in">
+                <p>ElevateVA Space - Mentoring High-Level Digital Operators</p>
+                <a href="https://tinyurl.com/ElevateVA-Space" class="elevaterva-btn" target="_blank">Learn More</a>
+            </div>
+        </div>
+    </section>
 
-  <footer>
-    <p>© 2025 Okami Nalado</p>
-    <p>Author | Founder of Wavy Receipts</p>
-  </footer>
+    <!-- Rate Card Section -->
+    <section id="ratecard" class="rate-card">
+        <div class="container">
+            <h2 class="section-title fade-in">Rate Card</h2>
+            <div class="rate-card-content">
+                <h3>Premium Pricing Structure</h3>
+                <p>Comprehensive rate card available upon request</p>
+                <div class="pricing-grid">
+                    <div class="pricing-item">
+                        <strong>Starting Investment:</strong> ₦250,000
+                    </div>
+                    <div class="pricing-item">
+                        <strong>Optional Add-ons:</strong> Available separately
+                    </div>
+                    <div class="pricing-item">
+                        <strong>Custom Quotes:</strong> For complex projects
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <footer>
+        <p>© 2025 Okami Enoch Nalado</p>
+        <p>Author | Founder of ElevateVA Space</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const dropdown = document.getElementById('dropdownMenu');
+            dropdown.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const dropdown = document.getElementById('dropdownMenu');
+            dropdown.classList.remove('active');
+        }
+
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const dropdown = document.getElementById('dropdownMenu');
+            const menuToggle = document.querySelector('.menu-toggle');
+            
+            if (!dropdown.contains(event.target) && !menuToggle.contains(event.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a:not([href^="https://"])').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    closeMenu(); // Close menu after clicking
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Sticky navigation effect
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.style.backgroundColor = 'rgba(11, 11, 11, 0.98)';
+            } else {
+                nav.style.backgroundColor = 'rgba(11, 11, 11, 0.95)';
+            }
+        });
+
+        // Button interactions
+        document.querySelectorAll('button, a').forEach(element => {
+            if (element.classList.contains('main-btn') || element.classList.contains('secondary-btn') || element.classList.contains('elevaterva-btn')) {
+                element.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                element.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            }
+        });
+    </script>
 </body>
 </html>
