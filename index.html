@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+       <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ElevateVA Space | E-commerce Systems Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0B0B0F;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(11, 11, 15, 0.9);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .logo {
+            height: 40px;
+            filter: brightness(1.2);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: #A1A1AA;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: white;
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            padding: 8rem 5% 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .hero-content {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease forwards;
+        }
+
+        .hero-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .founder-img {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(29, 78, 216, 0.2);
+            filter: drop-shadow(0 0 30px rgba(29, 78, 216, 0.3));
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease 0.3s forwards;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, white, #A1A1AA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            color: #A1A1AA;
+            font-size: 1.25rem;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            padding: 1rem 2rem;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: #1D4ED8;
+            color: white;
+            margin-right: 1rem;
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #A1A1AA;
+            border: 1px solid #2D3748;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(29, 78, 216, 0.3);
+        }
+
+        /* Proof Section */
+        .proof {
+            padding: 6rem 5%;
+            text-align: center;
+            background: linear-gradient(135deg, #0B0B0F 0%, #11111B 100%);
+        }
+
+        .demo-placeholder {
+            max-width: 800px;
+            height: 400px;
+            margin: 0 auto;
+            background: linear-gradient(45deg, #1D4ED8, #3B82F6);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.8);
+            box-shadow: 0 20px 40px rgba(29, 78, 216, 0.2);
+        }
+
+        .demo-caption {
+            color: #A1A1AA;
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 5%;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 4rem;
+            background: linear-gradient(135deg, white, #A1A1AA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 2.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(29, 78, 216, 0.3);
+            box-shadow: 0 20px 40px rgba(29, 78, 216, 0.15);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            color: #1D4ED8;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .service-desc {
+            color: #A1A1AA;
+            line-height: 1.6;
+        }
+
+        /* Positioning Section */
+        .positioning {
+            padding: 6rem 5%;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(29, 78, 216, 0.1), rgba(11, 11, 15, 0.1));
+            margin: 4rem 0;
+        }
+
+        .positioning-statement {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            max-width: 800px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, white, #A1A1AA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Founder Section */
+        .founder {
+            padding: 6rem 5%;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .founder-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #1D4ED8;
+            padding: 4px;
+        }
+
+        .founder-text {
+            color: #A1A1AA;
+            font-size: 1.2rem;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+
+        /* CTA Section */
+        .cta {
+            padding: 6rem 5%;
+            text-align: center;
+            background: linear-gradient(135deg, #0B0B0F 0%, #11111B 100%);
+        }
+
+        .cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, white, #A1A1AA);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        .footer {
+            padding: 3rem 5%;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+        }
+
+        .footer-logo {
+            height: 30px;
+            margin-bottom: 1rem;
+        }
+
+        .footer-text {
+            color: #A1A1AA;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .social-link {
+            color: #A1A1AA;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: color 0.3s ease;
+        }
+
+        .social-link:hover {
+            color: #1D4ED8;
+        }
+
+        .copyright {
+            color: #6B7280;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding-top: 6rem;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .demo-placeholder {
+                height: 250px;
+                font-size: 1.2rem;
+            }
+
+            .positioning-statement {
+                font-size: 1.8rem;
+            }
+
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <img src="logo.png" alt="ElevateVA Space Logo" class="logo">
+        <div class="nav-links">
+            <a href="#home" class="nav-link">Home</a>
+            <a href="#work" class="nav-link">Work</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>We Build E-commerce Systems That Turn Traffic Into Sales.</h1>
+            <p>ElevateVA Space designs high-converting online stores for brands that want consistent revenue, not just websites.</p>
+            <div class="hero-buttons">
+                <a href="https://wa.me/qr/IGNPCKFYUQUSJ1?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20call%20for%20my%20e-commerce%20store%20project.
+
+" class="btn btn-primary">Start Your Store</a>
+                <a href="#" class="btn btn-secondary">View Demo</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="okami.jpg" alt="Founder - Okami Enoch Nalado" class="founder-img">
+        </div>
+    </section>
+
+    <!-- Proof/Demo Section -->
+    <section class="proof" id="work">
+        <div class="demo-placeholder">
+            Luxury E-commerce Store Preview
+        </div>
+        <p class="demo-caption">Conversion-focused store design built for real sales performance.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <h2 class="section-title">What We Do</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🏗️</div>
+                <h3 class="service-title">Build</h3>
+                <p class="service-desc">E-commerce Store Creation</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">⚡</div>
+                <h3 class="service-title">Optimize</h3>
+                <p class="service-desc">Conversion & UX Systems</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">📈</div>
+                <h3 class="service-title">Scale</h3>
+                <p class="service-desc">Sales Growth Systems</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Positioning Section -->
+    <section class="positioning">
+        <p class="positioning-statement">We don't build websites. We build sales systems for online brands.</p>
+    </section>
+
+    <!-- Founder Section -->
+    <section class="founder">
+        <img src="okami.jpg" alt="Founder - Okami Enoch Nalado" class="founder-image">
+        <p class="founder-text">Built by a digital systems designer focused on high-converting e-commerce experiences.</p>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta" id="contact">
+        <h2>Ready to build a store that actually sells?</h2>
+        <div class="cta-buttons">
+            <a href="https://wa.me/qr/IGNPCKFYUQUSJ1?text=Hi%2C%20I%20saw%20ElevateVA%20Space%20and%20I%20want%20to%20build%20a%20high-converting%20e-commerce%20store%20for%20my%20business.
+
+" class="btn btn-primary">Start on WhatsApp</a>
+            <a href="https://wa.me/qr/IGNPCKFYUQUSJ1?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20call%20for%20my%20e-commerce%20store%20project.
+
+" class="btn btn-primary">Start on WhatsApp</a>" class="btn btn-secondary">Book a Call</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <img src="logo.png" alt="ElevateVA Space Logo" class="footer-logo">
+        <p class="footer-text">ElevateVA Space — E-commerce Systems Studio</p>
+        <div class="social-links">
+            <a href="https://wa.me/qr/IGNPCKFYUQUSJ1?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20call%20for%20my%20e-commerce%20store%20project.
+" class="social-link">📱</a>
+            <a href="https://wa.me/qr/IGNPCKFYUQUSJ1?text=Hi%2C%20I%20saw%20ElevateVA%20Space%20and%20I%20want%20to%20build%20a%20high-converting%20e-commerce%20store%20for%20my%20business." class="social-link">💬</a>
+        </div>
+        <p class="copyright">&copy; 2026 ElevateVA Space. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(20px)';
+            card.style.transition = 'all 0.6s ease 0.2s';
+            observer.observe(card);
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Lazy loading for images
+        const imgObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    img.src = img.dataset.src;
+                    imgObserver.unobserve(img);
+                }
+            });
+        });
+
+        // Add loading="lazy" to all images
+        document.querySelectorAll('img').forEach(img => {
+            img.loading = 'lazy';
+        });
+    </script>
+</body>
+</html>
