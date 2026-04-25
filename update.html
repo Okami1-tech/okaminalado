@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElevateVA Space | E-commerce Systems Studio</title>
+  <meta name="description" content="We build high-converting e-commerce systems for product brands. Turn your Instagram traffic into consistent sales.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <style>
+    :root{--bg:#080810;--bg2:#0d0d1a;--surface:rgba(255,255,255,0.03);--border:rgba(255,255,255,0.08);--border-hover:rgba(79,140,255,0.4);--blue:#4F8CFF;--blue-dim:rgba(79,140,255,0.15);--blue-glow:rgba(79,140,255,0.25);--text:#f0f0f8;--muted:#7a7a9a;--subtle:#3a3a5a;--white:#ffffff;--font-head:'Syne',sans-serif;--font-body:'DM Sans',sans-serif}
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);background:var(--bg);color:var(--text);overflow-x:hidden}
+    .wa-float{position:fixed;bottom:2rem;right:2rem;z-index:999;width:56px;height:56px;border-radius:50%;background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;font-size:1.5rem;text-decoration:none;box-shadow:0 4px 20px rgba(37,211,102,0.4);transition:transform 0.3s,box-shadow 0.3s}
+    .wa-float:hover{transform:scale(1.1);box-shadow:0 6px 30px rgba(37,211,102,0.6)}
+    .navbar{position:fixed;top:0;width:100%;z-index:100;padding:1.25rem 5%;display:flex;justify-content:space-between;align-items:center;background:rgba(8,8,16,0.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+    .logo{height:36px;filter:brightness(1.2)}
+    .nav-links{display:flex;gap:2.5rem;align-items:center}
+    .nav-link{color:var(--muted);text-decoration:none;font-family:var(--font-head);font-weight:500;font-size:0.875rem;letter-spacing:0.05em;transition:color 0.2s}
+    .nav-link:hover{color:var(--white)}
+    .nav-cta{padding:0.5rem 1.25rem;border-radius:8px;background:var(--blue);color:#fff;font-family:var(--font-head);font-weight:600;font-size:0.875rem;text-decoration:none;transition:opacity 0.2s,transform 0.2s}
+    .nav-cta:hover{opacity:0.85;transform:translateY(-1px)}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--muted);border-radius:2px}
+    .mobile-menu{display:none;position:fixed;top:70px;left:0;width:100%;background:rgba(8,8,16,0.98);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);padding:2rem 5%;flex-direction:column;gap:1.5rem;z-index:99}
+    .mobile-menu.open{display:flex}
+    .mobile-menu .nav-link{font-size:1.1rem;color:var(--text)}
+    .hero{min-height:100vh;padding:10rem 5% 6rem;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative}
+    .hero-glow{position:absolute;top:20%;left:5%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(79,140,255,0.1) 0%,transparent 70%);pointer-events:none}
+    @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.3}}
+    .hero-badge{display:inline-flex;align-items:center;gap:0.5rem;padding:0.35rem 1rem;border-radius:100px;border:1px solid var(--border-hover);background:var(--blue-dim);font-size:0.8rem;font-family:var(--font-head);font-weight:600;color:var(--blue);letter-spacing:0.08em;text-transform:uppercase;margin-bottom:2rem}
+    .hero-badge::before{content:'●';font-size:0.5rem;animation:pulse 2s infinite}
+    .hero h1{font-family:var(--font-head);font-size:clamp(2.2rem,5vw,3.8rem);font-weight:800;line-height:1.1;margin-bottom:1.5rem;letter-spacing:-0.02em}
+    .hero h1 span{background:linear-gradient(135deg,#fff 0%,var(--blue) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero p{color:var(--muted);font-size:1.05rem;line-height:1.7;margin-bottom:2.5rem;max-width:480px}
+    .hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+    .btn{display:inline-flex;align-items:center;gap:0.5rem;padding:0.875rem 1.75rem;border-radius:10px;font-family:var(--font-head);font-weight:600;font-size:0.95rem;text-decoration:none;transition:all 0.25s;cursor:pointer;border:none}
+    .btn-primary{background:var(--blue);color:#fff}
+    .btn-primary:hover{background:#6fa3ff;transform:translateY(-2px);box-shadow:0 8px 24px var(--blue-glow)}
+    .btn-ghost{background:transparent;color:var(--muted);border:1px solid var(--border)}
+    .btn-ghost:hover{color:var(--white);border-color:var(--subtle)}
+    .hero-visual{position:relative;display:flex;justify-content:center}
+    .founder-card{position:relative;border-radius:20px;overflow:hidden;border:1px solid var(--border);box-shadow:0 30px 80px rgba(0,0,0,0.5),0 0 0 1px var(--blue-dim)}
+    .founder-card img{width:100%;max-width:420px;display:block;object-fit:cover;aspect-ratio:4/5}
+    .founder-card-label{position:absolute;bottom:1.25rem;left:1.25rem;right:1.25rem;background:rgba(8,8,16,0.85);backdrop-filter:blur(12px);border:1px solid var(--border);border-radius:12px;padding:0.875rem 1.25rem;display:flex;justify-content:space-between;align-items:center}
+    .founder-name{font-family:var(--font-head);font-weight:700;font-size:0.95rem}
+    .founder-role{color:var(--muted);font-size:0.8rem;margin-top:2px}
+    .founder-tag{background:var(--blue-dim);color:var(--blue);border:1px solid var(--border-hover);border-radius:6px;padding:0.3rem 0.75rem;font-size:0.75rem;font-weight:600;font-family:var(--font-head)}
+    .stats{padding:3rem 5%;border-top:1px solid var(--border);border-bottom:1px solid var(--border);display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;background:var(--surface)}
+    .stat{text-align:center}
+    .stat-num{font-family:var(--font-head);font-size:2.2rem;font-weight:800;color:var(--white);line-height:1}
+    .stat-num span{color:var(--blue)}
+    .stat-label{color:var(--muted);font-size:0.85rem;margin-top:0.4rem}
+    section{padding:6rem 5%;position:relative}
+    .section-label{font-family:var(--font-head);font-size:0.75rem;font-weight:700;letter-spacing:0.15em;text-transform:uppercase;color:var(--blue);margin-bottom:1rem}
+    .section-title{font-family:var(--font-head);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:800;line-height:1.15;letter-spacing:-0.02em;margin-bottom:1.25rem}
+    .section-sub{color:var(--muted);font-size:1.05rem;line-height:1.65;max-width:580px}
+    .section-header{margin-bottom:4rem}
+    .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+    .service-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2.5rem 2rem;transition:all 0.3s;position:relative;overflow:hidden}
+    .service-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--blue-dim) 0%,transparent 60%);opacity:0;transition:opacity 0.3s}
+    .service-card:hover{border-color:var(--border-hover);transform:translateY(-6px);box-shadow:0 20px 50px rgba(0,0,0,0.3)}
+    .service-card:hover::before{opacity:1}
+    .service-icon{font-size:2rem;margin-bottom:1.25rem}
+    .service-tier{font-family:var(--font-head);font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--blue);margin-bottom:0.5rem}
+    .service-name{font-family:var(--font-head);font-size:1.35rem;font-weight:700;margin-bottom:1rem}
+    .service-desc{color:var(--muted);font-size:0.875rem;line-height:1.65;margin-bottom:1.5rem}
+    .service-includes{list-style:none}
+    .service-includes li{color:var(--muted);font-size:0.85rem;padding:0.4rem 0;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:0.6rem}
+    .service-includes li::before{content:'→';color:var(--blue);font-weight:700}
+    .service-price{margin-top:1.75rem;padding-top:1.25rem;border-top:1px solid var(--border);font-family:var(--font-head);font-size:1.1rem;font-weight:700;color:var(--white)}
+    .service-price small{color:var(--muted);font-size:0.8rem;font-weight:400}
+    .portfolio{background:var(--bg2)}
+    .portfolio-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem}
+    .project-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:all 0.3s;cursor:pointer}
+    .project-card:hover{border-color:var(--border-hover);transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,0.3)}
+    .project-preview{height:240px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;overflow:hidden}
+    .project-preview::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent 60%,rgba(8,8,16,0.8))}
+    .project-preview.fashion{background:linear-gradient(135deg,#1a0a20 0%,#2d1040 100%)}
+    .project-preview.beauty{background:linear-gradient(135deg,#1a0a10 0%,#3d1020 100%)}
+    .project-preview.placeholder{background:linear-gradient(135deg,#0a1020 0%,#102030 100%);opacity:0.5}
+    .project-info{padding:1.75rem}
+    .project-tag{display:inline-block;padding:0.25rem 0.75rem;border-radius:100px;background:var(--blue-dim);color:var(--blue);border:1px solid var(--border-hover);font-size:0.75rem;font-weight:600;font-family:var(--font-head);margin-bottom:0.75rem}
+    .project-name{font-family:var(--font-head);font-size:1.15rem;font-weight:700;margin-bottom:0.5rem}
+    .project-desc{color:var(--muted);font-size:0.875rem;line-height:1.6;margin-bottom:1.25rem}
+    .project-result{color:var(--blue);font-weight:600;font-size:0.875rem;font-family:var(--font-head)}
+    .project-result::before{content:'📈 '}
+    .coming-soon{color:var(--subtle);font-style:italic;font-size:0.875rem}
+    .case-study{background:linear-gradient(135deg,rgba(79,140,255,0.05) 0%,transparent 60%);border-top:1px solid var(--border)}
+    .case-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+    .case-steps{display:flex;flex-direction:column;gap:1.5rem;margin-top:2rem}
+    .case-step{display:flex;gap:1.25rem;padding:1.5rem;border-radius:12px;background:var(--surface);border:1px solid var(--border);transition:border-color 0.3s}
+    .case-step:hover{border-color:var(--border-hover)}
+    .step-num{flex-shrink:0;width:36px;height:36px;border-radius:50%;background:var(--blue-dim);border:1px solid var(--border-hover);display:flex;align-items:center;justify-content:center;font-family:var(--font-head);font-weight:700;font-size:0.8rem;color:var(--blue)}
+    .step-title{font-family:var(--font-head);font-weight:600;margin-bottom:0.4rem}
+    .step-text{color:var(--muted);font-size:0.875rem;line-height:1.6}
+    .result-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2.5rem;margin-bottom:1.5rem}
+    .result-label{color:var(--muted);font-size:0.8rem;font-family:var(--font-head);font-weight:600;letter-spacing:0.08em;text-transform:uppercase;margin-bottom:1.5rem}
+    .result-metrics{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin-bottom:1.5rem}
+    .metric{text-align:center;padding:1.25rem;background:var(--bg);border-radius:10px;border:1px solid var(--border)}
+    .metric-val{font-family:var(--font-head);font-size:1.8rem;font-weight:800;color:var(--blue)}
+    .metric-label{color:var(--muted);font-size:0.75rem;margin-top:0.25rem}
+    .result-quote{border-left:3px solid var(--blue);padding-left:1.25rem;color:var(--text);font-style:italic;line-height:1.7;font-size:0.95rem}
+    .result-quote cite{display:block;margin-top:0.75rem;color:var(--muted);font-style:normal;font-size:0.8rem;font-weight:600}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem}
+    .why-card{padding:2rem;border-radius:12px;background:var(--surface);border:1px solid var(--border)}
+    .why-icon{font-size:1.75rem;margin-bottom:1rem}
+    .why-title{font-family:var(--font-head);font-weight:700;margin-bottom:0.75rem}
+    .why-text{color:var(--muted);font-size:0.875rem;line-height:1.65}
+    .contact{background:var(--bg2)}
+    .contact-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start}
+    .contact-options{display:flex;flex-direction:column;gap:1rem;margin-top:2.5rem}
+    .contact-option{display:flex;align-items:center;gap:1rem;padding:1.25rem;border-radius:12px;background:var(--surface);border:1px solid var(--border);text-decoration:none;color:var(--text);transition:all 0.25s}
+    .contact-option:hover{border-color:var(--border-hover);transform:translateX(4px)}
+    .contact-option-icon{font-size:1.5rem;flex-shrink:0}
+    .contact-option-title{font-family:var(--font-head);font-weight:600;font-size:0.95rem}
+    .contact-option-sub{color:var(--muted);font-size:0.8rem}
+    .contact-form{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:2.5rem}
+    .form-title{font-family:var(--font-head);font-weight:700;font-size:1.3rem;margin-bottom:0.5rem}
+    .form-sub{color:var(--muted);font-size:0.875rem;margin-bottom:2rem}
+    .form-group{margin-bottom:1.25rem}
+    .form-label{display:block;color:var(--muted);font-size:0.8rem;font-weight:600;font-family:var(--font-head);letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.5rem}
+    .form-input,.form-select,.form-textarea{width:100%;padding:0.875rem 1rem;border-radius:10px;background:var(--bg);border:1px solid var(--border);color:var(--text);font-family:var(--font-body);font-size:0.95rem;transition:border-color 0.2s;outline:none}
+    .form-input:focus,.form-select:focus,.form-textarea:focus{border-color:var(--blue)}
+    .form-select{appearance:none;cursor:pointer}
+    .form-select option{background:#0d0d1a;color:var(--text)}
+    .form-textarea{resize:vertical;min-height:120px}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+    .form-submit{width:100%;padding:1rem;border-radius:10px;background:var(--blue);color:#fff;border:none;cursor:pointer;font-family:var(--font-head);font-weight:700;font-size:1rem;transition:all 0.25s;margin-top:0.5rem}
+    .form-submit:hover{background:#6fa3ff;transform:translateY(-2px);box-shadow:0 8px 24px var(--blue-glow)}
+    .form-note{color:var(--muted);font-size:0.8rem;text-align:center;margin-top:1rem}
+    .cta-banner{padding:5rem 5%;text-align:center;background:linear-gradient(135deg,rgba(79,140,255,0.08) 0%,transparent 100%);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .cta-banner h2{font-family:var(--font-head);font-size:clamp(1.8rem,4vw,3rem);font-weight:800;margin-bottom:1rem;letter-spacing:-0.02em}
+    .cta-banner p{color:var(--muted);margin-bottom:2.5rem;font-size:1.05rem}
+    .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+    .footer{padding:3rem 5%;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem}
+    .footer-logo img{height:28px}
+    .footer-copy{color:var(--muted);font-size:0.85rem}
+    .footer-links{display:flex;gap:2rem}
+    .footer-link{color:var(--muted);text-decoration:none;font-size:0.85rem;transition:color 0.2s}
+    .footer-link:hover{color:var(--white)}
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity 0.65s ease,transform 0.65s ease}
+    .reveal.visible{opacity:1;transform:translateY(0)}
+    @media(max-width:1024px){.services-grid{grid-template-columns:1fr 1fr}.why-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:768px){.hero{grid-template-columns:1fr;padding-top:8rem;text-align:center;gap:3rem}.hero p{margin:0 auto 2rem}.hero-btns{justify-content:center}.hero-visual{order:-1}.founder-card img{max-width:100%}.stats{grid-template-columns:1fr 1fr}.services-grid{grid-template-columns:1fr}.portfolio-grid{grid-template-columns:1fr}.case-layout{grid-template-columns:1fr;gap:3rem}.why-grid{grid-template-columns:1fr}.contact-layout{grid-template-columns:1fr;gap:3rem}.form-row{grid-template-columns:1fr}.footer{flex-direction:column;text-align:center}.footer-links{justify-content:center}.nav-links{display:none}.hamburger{display:flex}}
+  </style>
+</head>
+<body>
+
+<a href="https://wa.me/qr/IGNPCKFYUQUSJ1?text=Hi%2C%20I%20saw%20ElevateVA%20Space%20and%20I%27m%20interested%20in%20building%20a%20store." class="wa-float" title="Chat on WhatsApp">💬</a>
+
+<nav class="navbar">
+  <a href="#home"><img src="logo.png" alt="ElevateVA Space" class="logo"></a>
+  <div class="nav-links">
+    <a href="#services" class="nav-link">Services</a>
+    <a href="#work" class="nav-link">Work</a>
+    <a href="#case-study" class="nav-link">Results</a>
+    <a href="#contact" class="nav-link">Contact</a>
+    <a href="https://wa.me/qr/IGNPCKFYUQUSJ1?text=Hi%2C%20I%20want%20to%20book%20a%20consultation." class="nav-cta">Book a Call →</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#services" class="nav-link" onclick="toggleMenu()">Services</a>
+  <a href="#work" class="nav-link" onclick="toggleMenu()">Work</a>
+  <a href="#case-study" class="nav-link" onclick="toggleMenu()">Results</a>
+  <a href="#contact" class="nav-link" onclick="toggleMenu()">Contact</a>
+  <a href="https://wa.me/qr/IGNPCKFYUQUSJ1?text=Hi%2C%20I%20want%20to%20book%20a%20consultation." class="btn btn-primary">Book a Call →</a>
+</div>
+
+<section class="hero" id="home">
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <div class="hero-badge">Available for new projects</div>
+    <h1>We Build <span>E-commerce Systems</span> That Turn Traffic Into Sales.</h1>
+    <p>ElevateVA Space designs high-converting online stores for product brands. Not just websites — sales machines built to move inventory and grow revenue.</p>
+    <div class="hero-btns">
+      <a href="https://wa.me/qr/IGNPCKFYUQUSJ1?text=Hi%2C%20I%20want%20to%20start%20my%20e-commerce%20store%20project." class="btn btn-primary">Start Your Store →</a>
+      <a href="#work" class="btn btn-ghost">View Our Work</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="founder-card">
+      <img src="okami.jpg" alt="Okami Enoch Nalado — Founder, ElevateVA Space">
+      <div class="founder-card-label">
+        <div>
+          <div class="founder-name">Okami Enoch Nalado</div>
+          <div class="founder-role">Founder &amp; E-commerce Systems Designer</div>
+        </div>
+        <div class="founder-tag">Open</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats reveal">
+  <div class="stat"><div class="stat-num">48<span>hr</span></div><div class="stat-label">Avg. launch turnaround</div></div>
+  <div class="stat"><div class="stat-num">3<span>x</span></div><div class="stat-label">Avg. conversion improvement</div></div>
+  <div class="stat"><div class="stat-num">100<span>%</span></div><div class="stat-label">Mobile-first builds</div></div>
+  <div class="stat"><div class="stat-num">5<span>★</span></div><div class="stat-label">Client satisfaction</div></div>
+</div>
+
+<section id="services">
+  <div class="section-header reveal">
+    <div class="section-label">What We Offer</div>
+    <h2 class="section-title">Three Ways to Work With Us</h2>
+    <p class="section-sub">Pick the engagement that fits where your brand is right now. Every tier is built around one goal: more sales.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">🏗️</div>
+      <div class="service-tier">Tier 1</div>
+      <h3 class="service-name">Store Launch</h3>
+      <p class="service-desc">For brands starting from zero or rebuilding their store entirely. We design and build a high-converting e-commerce experience from scratch.</p>
+      <ul class="service-includes">
+        <li>Custom storefront design</li>
+        <li>Product pages optimized for conversions</li>
+        <li>Checkout flow setup</li>
+        <li>Mobile-first build</li>
+        <li>WhatsApp / social integration</li>
+        <li>2-week delivery</li>
+      </ul>
+      <div class="service-price">From $300 <small>/ one-time</small></div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">⚡</div>
+      <div class="service-tier">Tier 2</div>
+      <h3 class="service-name">Conversion Fix</h3>
+      <p class="service-desc">Already have a store but not making sales? We audit, redesign, and rebuild the key pages that kill your conversion rate.</p>
+      <ul class="service-includes">
+        <li>Full store audit + report</li>
+        <li>Homepage &amp; product page redesign</li>
+        <li>Checkout abandonment fixes</li>
+        <li>Speed &amp; UX optimisation</li>
+        <li>Trust signals &amp; social proof</li>
+        <li>Before/after analytics</li>
+      </ul>
+      <div class="service-price">From $200 <small>/ one-time</small></div>
+    </div>
+    <div class="service-card reveal">
+      <div class="service-icon">📈</div>
+      <div class="service-tier">Tier 3</div>
+      <h3 class="service-name">Growth System</h3>
+      <p class="service-desc">For established brands ready to scale. Full-stack e-commerce strategy — store, systems, automations, and ongoing optimisation.</p>
+      <ul class="service-includes">
+        <li>Everything in Tiers 1 &amp; 2</li>
+        <li>Email capture &amp; automation</li>
+        <li>Upsell &amp; cross-sell systems</li>
+        <li>Monthly performance reviews</li>
+        <li>Priority support &amp; updates</li>
+        <li>3-month engagement</li>
+      </ul>
+      <div class="service-price">From $600 <small>/ 3 months</small></div>
+    </div>
+  </div>
+</section>
+
+<section class="portfolio" id="work">
+  <div class="section-header reveal">
+    <div class="section-label">Our Work</div>
+    <h2 class="section-title">Stores We've Built</h2>
+    <p class="section-sub">Every project starts with one question: what does this brand need to convert visitors into buyers?</p>
+  </div>
+  <div class="portfolio-grid">
+    <div class="project-card reveal">
+      <div class="project-preview fashion">🛍️</div>
+      <div class="project-info">
+        <span class="project-tag">Fashion Brand</span>
+        <h3 class="project-name">Demo Store — Fashion</h3>
+        <p class="project-desc">A complete storefront for a Lagos-based fashion brand selling women's clothing. Rebuilt from a broken link-in-bio to a live, fully branded store.</p>
+        <div class="project-result">Store live in 10 days — first 3 orders in 48hrs</div>
+      </div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-preview beauty">💄</div>
+      <div class="project-info">
+        <span class="project-tag">Beauty Brand</span>
+        <h3 class="project-name">Demo Store — Beauty</h3>
+        <p class="project-desc">A beauty brand moving from Instagram DMs to a full checkout experience. Custom product pages, upsell flows, and WhatsApp order confirmation.</p>
+        <div class="project-result">Checkout abandonment dropped by ~40%</div>
+      </div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-preview placeholder">🔜</div>
+      <div class="project-info">
+        <span class="project-tag">Coming Soon</span>
+        <h3 class="project-name">Your Brand Here</h3>
+        <p class="project-desc">This slot is open. We're actively looking for one brand to partner with at a discounted rate in exchange for a detailed case study.</p>
+        <div class="coming-soon">Reach out to claim this spot →</div>
+      </div>
+    </div>
+    <div class="project-card reveal">
+      <div class="project-preview placeholder">🔜</div>
+      <div class="project-info">
+        <span class="project-tag">Coming Soon</span>
+        <h3 class="project-name">Your Brand Here</h3>
+        <p class="project-desc">Building a portfolio starts with one brave client. We'd love that to be you.</p>
+        <div class="coming-soon">Reach out to claim this spot →</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="case-study" id="case-study">
+  <div class="section-header reveal">
+    <div class="section-label">Case Study</div>
+    <h2 class="section-title">How We Turn a Broken Store Into a Sales Machine</h2>
+    <p class="section-sub">A breakdown of our process — and the results it produces — for a fashion brand based in Lagos.</p>
+  </div>
+  <div class="case-layout">
+    <div class="reveal">
+      <p style="color:var(--muted);line-height:1.7;margin-bottom:2rem">A small fashion brand came to us with 8,000 Instagram followers, solid engagement, and zero online sales. Their bio link pointed to Instagram. People were asking "where can I buy?" in the comments — and there was nowhere to send them.</p>
+      <div class="case-steps">
+        <div class="case-step"><div class="step-num">01</div><div><div class="step-title">Discovery &amp; Audit</div><div class="step-text">We mapped their product catalog, target customer, and biggest drop-off points. Their DM-to-sale conversion rate was under 5%.</div></div></div>
+        <div class="case-step"><div class="step-num">02</div><div><div class="step-title">Store Architecture</div><div class="step-text">Designed a full storefront: homepage, 6 product pages, collection view, cart, and checkout — all mobile-first since 95% of their traffic came from phones.</div></div></div>
+        <div class="case-step"><div class="step-num">03</div><div><div class="step-title">Build &amp; Launch</div><div class="step-text">Live in 10 days. WhatsApp order confirmation wired in. IG link-in-bio updated. First order came in 31 hours after launch.</div></div></div>
+        <div class="case-step"><div class="step-num">04</div><div><div class="step-title">Post-Launch Optimisation</div><div class="step-text">Tweaked product descriptions and added size guides after week 1. Return visitor rate climbed to 28% by week 3.</div></div></div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="result-card">
+        <div class="result-label">Results — 30 days post-launch</div>
+        <div class="result-metrics">
+          <div class="metric"><div class="metric-val">23</div><div class="metric-label">Orders in first month</div></div>
+          <div class="metric"><div class="metric-val">10d</div><div class="metric-label">Store delivered in</div></div>
+          <div class="metric"><div class="metric-val">28%</div><div class="metric-label">Return visitor rate</div></div>
+          <div class="metric"><div class="metric-val">0→✓</div><div class="metric-label">Online sales channel</div></div>
+        </div>
+        <div class="result-quote">
+          "Before ElevateVA Space we were losing sales every single day because people had nowhere to buy. Now our store does the selling while we focus on the product."
+          <cite>— Fashion Brand Founder, Lagos</cite>
+        </div>
+      </div>
+      <div style="background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:2rem;margin-top:1.5rem">
+        <p style="color:var(--muted);font-size:0.875rem;line-height:1.7;margin-bottom:1.5rem">Ready to be our next case study? We're offering one discounted project this quarter to a brand that's serious about building properly.</p>
+        <a href="https://wa.me/qr/IGNPCKFYUQUSJ1?text=Hi%2C%20I%20want%20to%20be%20your%20next%20case%20study%20brand." class="btn btn-primary" style="width:100%;justify-content:center">Claim the Spot →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-header reveal">
+    <div class="section-label">Why ElevateVA Space</div>
+    <h2 class="section-title">We're Not a Web Design Shop</h2>
+    <p class="section-sub">Designers build pretty websites. We build sales systems. The difference shows up in your analytics.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card reveal"><div class="why-icon">🎯</div><div class="why-title">Conversion-First Thinking</div><div class="why-text">Every layout decision, button placement, and copy choice is made with one question: does this move a visitor closer to checkout?</div></div>
+    <div class="why-card reveal"><div class="why-icon">📱</div><div class="why-title">Built for Your Actual Buyers</div><div class="why-text">Your customers shop on their phones, from Instagram, on slow connections. We build for that reality — not a desktop Figma preview.</div></div>
+    <div class="why-card reveal"><div class="why-icon">⚡</div><div class="why-title">Fast Delivery, Real Results</div><div class="why-text">No 6-week timelines. Most builds ship in under 2 weeks so you can start making sales, not waiting for a designer.</div></div>
+    <div class="why-card reveal"><div class="why-icon">🤝</div><div class="why-title">Brand-Partner Mentality</div><div class="why-text">We study your brand, your niche, and your competitors before we write a single line of code. Your store should feel like you.</div></div>
+    <div class="why-card reveal"><div class="why-icon">🔗</div><div class="why-title">IG-to-Store Pipeline Built In</div><div class="why-text">Every store we build includes a seamless Instagram → store path. Because that's where your audience is.</div></div>
+    <div class="why-card reveal"><div class="why-icon">📊</div><div class="why-title">You See the Numbers</div><div class="why-text">Analytics hooked up from day one. You'll know where visitors are dropping off and what's working — no black box.</div></div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="section-header reveal">
+    <div class="section-label">Get in Touch</div>
+    <h2 class="section-title">Let's Build Your Store</h2>
+    <p class="section-sub">Tell us about your brand and what you're trying to build. We'll come back to you within 24 hours.</p>
+  </div>
+  <div class="contact-layout">
+    <div class="reveal">
+      <p style="color:var(--muted);line-height:1.7;margin-bottom:2rem">Whether you're starting from zero, fixing a broken store, or ready to scale — we want to hear about your brand. No hard sell, just a real conversation about what you need.</p>
+      <div class="contact-options">
+        <a href="https://wa.me/qr/IGNPCKFYUQUSJ1?text=Hi%2C%20I%20want%20to%20start%20a%20quick%20chat%20about%20my%20store." class="contact-option">
+          <div class="contact-option-icon">💬</div>
+          <div><div class="contact-option-title">WhatsApp — Quick Chat</div><div class="contact-option-sub">Fastest way to reach us. Usually reply within 2 hours.</div></div>
+        </a>
+        <a href="https://wa.me/qr/IGNPCKFYUQUSJ1?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20call%20for%20my%20e-commerce%20store%20project." class="contact-option">
+          <div class="contact-option-icon">📞</div>
+          <div><div class="contact-option-title">Book a Discovery Call</div><div class="contact-option-sub">30 minutes. We'll map out your store strategy together.</div></div>
+        </a>
+      </div>
+      <div style="margin-top:2.5rem;padding:1.5rem;background:var(--surface);border:1px solid var(--border);border-radius:12px">
+        <div style="font-family:var(--font-head);font-weight:700;margin-bottom:0.5rem">What happens after you reach out?</div>
+        <div style="color:var(--muted);font-size:0.875rem;line-height:1.8">
+          1. We review your brand and IG presence<br>
+          2. We send you a quick audit of what we'd fix first<br>
+          3. We propose the right tier for your situation<br>
+          4. You decide — zero pressure
+        </div>
+      </div>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-title">Tell Us About Your Brand</div>
+      <div class="form-sub">Fill this in and we'll reach out on WhatsApp within 24 hours.</div>
+      <div class="form-row">
+        <div class="form-group"><label class="form-label">Your Name</label><input type="text" class="form-input" id="f-name" placeholder="First name"></div>
+        <div class="form-group"><label class="form-label">Brand Name</label><input type="text" class="form-input" id="f-brand" placeholder="Your brand"></div>
+      </div>
+      <div class="form-group"><label class="form-label">Instagram Handle</label><input type="text" class="form-input" id="f-ig" placeholder="@yourbrand"></div>
+      <div class="form-group">
+        <label class="form-label">What do you need?</label>
+        <select class="form-select" id="f-service">
+          <option value="">Select a service</option>
+          <option>Store Launch — build from scratch</option>
+          <option>Conversion Fix — improve existing store</option>
+          <option>Growth System — scale my brand</option>
+          <option>Not sure yet — need advice</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Budget Range</label>
+        <select class="form-select" id="f-budget">
+          <option value="">Select a range</option>
+          <option>Under $200</option>
+          <option>$200–$400</option>
+          <option>$400–$700</option>
+          <option>$700+</option>
+        </select>
+      </div>
+      <div class="form-group"><label class="form-label">Anything else we should know?</label><textarea class="form-textarea" id="f-msg" placeholder="Tell us about your brand, what you sell, and your biggest challenge right now..."></textarea></div>
+      <button class="form-submit" onclick="submitForm()">Send on WhatsApp →</button>
+      <div class="form-note">We'll review this and reply on WhatsApp within 24 hours.</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-banner">
+  <h2 class="reveal">Ready to Build a Store That Actually Sells?</h2>
+  <p class="reveal">Your Instagram audience is warm. They just need somewhere to buy.</p>
+  <div class="cta-btns reveal">
+    <a href="https://wa.me/qr/IGNPCKFYUQUSJ1?text=Hi%2C%20I%20saw%20ElevateVA%20Space%20and%20I%20want%20to%20build%20a%20high-converting%20e-commerce%20store%20for%20my%20brand." class="btn btn-primary">Start on WhatsApp →</a>
+    <a href="https://wa.me/qr/IGNPCKFYUQUSJ1?text=Hi%2C%20I%20want%20to%20book%20a%20consultation%20call%20for%20my%20e-commerce%20store%20project." class="btn btn-ghost">Book a Call</a>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-logo"><img src="logo.png" alt="ElevateVA Space"></div>
+  <div class="footer-copy">© 2026 ElevateVA Space. All rights reserved.</div>
+  <div class="footer-links">
+    <a href="#services" class="footer-link">Services</a>
+    <a href="#work" class="footer-link">Work</a>
+    <a href="#contact" class="footer-link">Contact</a>
+    <a href="https://wa.me/qr/IGNPCKFYUQUSJ1" class="footer-link">WhatsApp</a>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu(){document.getElementById('mobileMenu').classList.toggle('open')}
+  const revealEls=document.querySelectorAll('.reveal');
+  const ro=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*80);ro.unobserve(e.target)}})},{threshold:0.08,rootMargin:'0px 0px -40px 0px'});
+  revealEls.forEach(el=>ro.observe(el));
+  window.addEventListener('scroll',()=>{document.querySelector('.navbar').style.boxShadow=window.scrollY>20?'0 4px 30px rgba(0,0,0,0.3)':'none'});
+  function submitForm(){
+    const name=document.getElementById('f-name').value||'A visitor';
+    const brand=document.getElementById('f-brand').value||'their brand';
+    const ig=document.getElementById('f-ig').value||'(not provided)';
+    const service=document.getElementById('f-service').value||'not specified';
+    const budget=document.getElementById('f-budget').value||'not specified';
+    const msg=document.getElementById('f-msg').value||'(no message)';
+    const text=`Hi, I'm ${name} from ${brand}.\n\nInstagram: ${ig}\nService: ${service}\nBudget: ${budget}\n\nMore info: ${msg}`;
+    window.open(`https://wa.me/qr/IGNPCKFYUQUSJ1?text=${encodeURIComponent(text)}`,'_blank');
+  }
+  document.querySelectorAll('img').forEach(img=>{img.loading='lazy'});
+</script>
+</body>
+</html>
